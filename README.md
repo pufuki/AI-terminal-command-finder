@@ -72,22 +72,6 @@ To regenerate the backend dataset after modifying TypeScript files:
 cd backend && node generate_dataset.js
 ```
 
-## Configuration
-
-| Variable | Default | Description |
-|---|---|---|
-| `PYTHON_BACKEND_URL` | `http://localhost:8000` | FastAPI backend URL |
-| `OLLAMA_URL` | `http://localhost:11434` | Ollama server URL |
-| `OLLAMA_MODEL` | `llama3.2` | Ollama model name |
-| `EMBEDDING_MODEL` | `all-MiniLM-L6-v2` | sentence-transformers model |
-
-## Tech Stack
-
-- **Frontend:** Next.js 13, TypeScript, TailwindCSS, shadcn/ui, lucide-react
-- **Backend:** FastAPI, FAISS, sentence-transformers, Pydantic
-- **LLM:** Ollama (llama3.2)
-- **Docker:** Docker Compose for full-stack deployment
-
 ## License
 
 MIT
