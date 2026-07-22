@@ -67,19 +67,6 @@ After first run, pull the model inside the Ollama container:
 docker exec -it <ollama-container> ollama pull llama3.2
 ```
 
-## Dataset
-
-Each command entry contains:
-- `id` — Unique identifier
-- `command` — The terminal command
-- `description` — Short plain-English description
-- `category` — One of 8 categories
-- `tags` — Searchable keyword tags
-- `example` — Concrete usage example
-- `safety` — `safe` | `warning` | `dangerous`
-- `explanation` — Detailed explanation of what the command does
-- `flags` — Array of `{ flag, description }` for each flag used
-
 To regenerate the backend dataset after modifying TypeScript files:
 ```bash
 cd backend && node generate_dataset.js
