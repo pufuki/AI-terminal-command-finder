@@ -1,4 +1,4 @@
-# CmdFind — AI Terminal Command Finder
+# CmdFind - AI Terminal Command Finder
 
 Find the right terminal command in seconds. Describe what you want in plain English and get the exact command, explanation, flags, and safety info instantly.
 
