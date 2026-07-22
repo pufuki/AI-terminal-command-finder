@@ -1,0 +1,5197 @@
+[
+  {
+    "id": "dv-001",
+    "command": "docker build -t image_name .",
+    "description": "Build a Docker image from Dockerfile",
+    "category": "Development",
+    "tags": [
+      "docker",
+      "build",
+      "image",
+      "dockerfile",
+      "container"
+    ],
+    "example": "docker build -t myapp:latest .",
+    "safety": "safe",
+    "explanation": "Builds a Docker image from the Dockerfile in the current directory and tags it with the given name.",
+    "flags": null
+  },
+  {
+    "id": "dv-002",
+    "command": "docker run -p 8080:80 image_name",
+    "description": "Run a Docker container with port mapping",
+    "category": "Development",
+    "tags": [
+      "docker",
+      "run",
+      "container",
+      "port",
+      "map"
+    ],
+    "example": "docker run -p 3000:3000 myapp",
+    "safety": "safe",
+    "explanation": "Starts a container from the image and maps a host port to a container port.",
+    "flags": null
+  },
+  {
+    "id": "dv-003",
+    "command": "docker run -d --name container_name image_name",
+    "description": "Run a container in detached mode with a name",
+    "category": "Development",
+    "tags": [
+      "docker",
+      "run",
+      "detached",
+      "background",
+      "name"
+    ],
+    "example": "docker run -d --name webserver nginx",
+    "safety": "safe",
+    "explanation": "Starts a container in the background with a custom name for easy reference.",
+    "flags": null
+  },
+  {
+    "id": "dv-004",
+    "command": "docker ps",
+    "description": "List running containers",
+    "category": "Development",
+    "tags": [
+      "docker",
+      "ps",
+      "list",
+      "running",
+      "containers"
+    ],
+    "example": "docker ps -a",
+    "safety": "safe",
+    "explanation": "Lists all currently running Docker containers. Use -a to include stopped ones.",
+    "flags": null
+  },
+  {
+    "id": "dv-005",
+    "command": "docker ps -a",
+    "description": "List all containers including stopped",
+    "category": "Development",
+    "tags": [
+      "docker",
+      "ps",
+      "all",
+      "stopped",
+      "containers"
+    ],
+    "example": "docker ps -a --format \"table {{.Names}}\\\\t{{.Status}}\"",
+    "safety": "safe",
+    "explanation": "Lists all containers on the system, both running and stopped.",
+    "flags": null
+  },
+  {
+    "id": "dv-006",
+    "command": "docker stop container_name",
+    "description": "Stop a running container",
+    "category": "Development",
+    "tags": [
+      "docker",
+      "stop",
+      "container",
+      "halt"
+    ],
+    "example": "docker stop webserver",
+    "safety": "safe",
+    "explanation": "Gracefully stops the specified running container.",
+    "flags": null
+  },
+  {
+    "id": "dv-007",
+    "command": "docker rm container_name",
+    "description": "Remove a stopped container",
+    "category": "Development",
+    "tags": [
+      "docker",
+      "rm",
+      "remove",
+      "container",
+      "delete"
+    ],
+    "example": "docker rm webserver",
+    "safety": "safe",
+    "explanation": "Removes a stopped container from the system.",
+    "flags": null
+  },
+  {
+    "id": "dv-008",
+    "command": "docker rmi image_name",
+    "description": "Remove a Docker image",
+    "category": "Development",
+    "tags": [
+      "docker",
+      "rmi",
+      "remove",
+      "image",
+      "delete"
+    ],
+    "example": "docker rmi myapp:latest",
+    "safety": "warning",
+    "explanation": "Removes the specified Docker image from the local image store.",
+    "flags": null
+  },
+  {
+    "id": "dv-009",
+    "command": "docker exec -it container_name bash",
+    "description": "Open an interactive shell in a running container",
+    "category": "Development",
+    "tags": [
+      "docker",
+      "exec",
+      "shell",
+      "interactive",
+      "bash"
+    ],
+    "example": "docker exec -it webserver bash",
+    "safety": "safe",
+    "explanation": "Opens an interactive bash shell inside a running container for debugging.",
+    "flags": null
+  },
+  {
+    "id": "dv-010",
+    "command": "docker logs -f container_name",
+    "description": "Follow container logs in real-time",
+    "category": "Development",
+    "tags": [
+      "docker",
+      "logs",
+      "follow",
+      "realtime",
+      "tail"
+    ],
+    "example": "docker logs -f webserver",
+    "safety": "safe",
+    "explanation": "Streams the log output of a container in real-time.",
+    "flags": null
+  },
+  {
+    "id": "dv-011",
+    "command": "docker-compose up -d",
+    "description": "Start all services in background",
+    "category": "Development",
+    "tags": [
+      "docker-compose",
+      "up",
+      "services",
+      "background",
+      "detached"
+    ],
+    "example": "docker-compose up -d",
+    "safety": "safe",
+    "explanation": "Builds, creates, and starts all services defined in docker-compose.yml in the background.",
+    "flags": null
+  },
+  {
+    "id": "dv-012",
+    "command": "docker-compose down",
+    "description": "Stop and remove all containers and networks",
+    "category": "Development",
+    "tags": [
+      "docker-compose",
+      "down",
+      "stop",
+      "remove",
+      "cleanup"
+    ],
+    "example": "docker-compose down -v",
+    "safety": "warning",
+    "explanation": "Stops and removes all containers, networks, and optionally volumes from a compose project.",
+    "flags": null
+  },
+  {
+    "id": "dv-013",
+    "command": "docker system prune -a",
+    "description": "Remove all unused Docker data",
+    "category": "Development",
+    "tags": [
+      "docker",
+      "prune",
+      "clean",
+      "remove",
+      "unused"
+    ],
+    "example": "docker system prune -a --volumes",
+    "safety": "dangerous",
+    "explanation": "Removes all unused images, containers, networks, and optionally volumes to reclaim disk space.",
+    "flags": null
+  },
+  {
+    "id": "dv-014",
+    "command": "npm install",
+    "description": "Install all project dependencies",
+    "category": "Development",
+    "tags": [
+      "npm",
+      "install",
+      "dependencies",
+      "node",
+      "packages"
+    ],
+    "example": "npm install",
+    "safety": "safe",
+    "explanation": "Installs all dependencies listed in package.json into the local node_modules directory.",
+    "flags": null
+  },
+  {
+    "id": "dv-015",
+    "command": "npm install package_name",
+    "description": "Install a specific npm package",
+    "category": "Development",
+    "tags": [
+      "npm",
+      "install",
+      "package",
+      "add",
+      "dependency"
+    ],
+    "example": "npm install axios",
+    "safety": "safe",
+    "explanation": "Installs the specified package and adds it to the dependencies in package.json.",
+    "flags": null
+  },
+  {
+    "id": "dv-016",
+    "command": "npm install -D package_name",
+    "description": "Install a package as a dev dependency",
+    "category": "Development",
+    "tags": [
+      "npm",
+      "install",
+      "dev",
+      "dependency",
+      "save-dev"
+    ],
+    "example": "npm install -D typescript",
+    "safety": "safe",
+    "explanation": "Installs the package and adds it to devDependencies, used for development-only tools.",
+    "flags": null
+  },
+  {
+    "id": "dv-017",
+    "command": "npm run dev",
+    "description": "Start the development server",
+    "category": "Development",
+    "tags": [
+      "npm",
+      "run",
+      "dev",
+      "server",
+      "start"
+    ],
+    "example": "npm run dev",
+    "safety": "safe",
+    "explanation": "Runs the dev script defined in package.json, typically starting a dev server.",
+    "flags": null
+  },
+  {
+    "id": "dv-018",
+    "command": "npm run build",
+    "description": "Build the project for production",
+    "category": "Development",
+    "tags": [
+      "npm",
+      "run",
+      "build",
+      "production",
+      "compile"
+    ],
+    "example": "npm run build",
+    "safety": "safe",
+    "explanation": "Runs the build script defined in package.json, typically creating a production build.",
+    "flags": null
+  },
+  {
+    "id": "dv-019",
+    "command": "npm run test",
+    "description": "Run the test suite",
+    "category": "Development",
+    "tags": [
+      "npm",
+      "run",
+      "test",
+      "suite",
+      "jest"
+    ],
+    "example": "npm run test -- --coverage",
+    "safety": "safe",
+    "explanation": "Runs the test script defined in package.json.",
+    "flags": null
+  },
+  {
+    "id": "dv-020",
+    "command": "npx create-next-app@latest my-app",
+    "description": "Create a new Next.js application",
+    "category": "Development",
+    "tags": [
+      "npx",
+      "create",
+      "nextjs",
+      "scaffold",
+      "new"
+    ],
+    "example": "npx create-next-app@latest my-app --typescript --tailwind",
+    "safety": "safe",
+    "explanation": "Scaffolds a new Next.js project with the latest version in the specified directory.",
+    "flags": null
+  },
+  {
+    "id": "dv-021",
+    "command": "pip install package_name",
+    "description": "Install a Python package",
+    "category": "Development",
+    "tags": [
+      "pip",
+      "install",
+      "python",
+      "package",
+      "dependency"
+    ],
+    "example": "pip install requests",
+    "safety": "safe",
+    "explanation": "Installs the specified Python package from PyPI.",
+    "flags": null
+  },
+  {
+    "id": "dv-022",
+    "command": "pip install -r requirements.txt",
+    "description": "Install all Python dependencies from requirements file",
+    "category": "Development",
+    "tags": [
+      "pip",
+      "install",
+      "requirements",
+      "python",
+      "dependencies"
+    ],
+    "example": "pip install -r requirements.txt",
+    "safety": "safe",
+    "explanation": "Installs all packages listed in the requirements.txt file.",
+    "flags": null
+  },
+  {
+    "id": "dv-023",
+    "command": "python -m venv venv",
+    "description": "Create a Python virtual environment",
+    "category": "Development",
+    "tags": [
+      "python",
+      "venv",
+      "virtual",
+      "environment",
+      "isolate"
+    ],
+    "example": "python -m venv venv",
+    "safety": "safe",
+    "explanation": "Creates a new Python virtual environment in the venv directory for isolated dependencies.",
+    "flags": null
+  },
+  {
+    "id": "dv-024",
+    "command": "source venv/bin/activate",
+    "description": "Activate a Python virtual environment",
+    "category": "Development",
+    "tags": [
+      "source",
+      "venv",
+      "activate",
+      "python",
+      "virtual"
+    ],
+    "example": "source venv/bin/activate",
+    "safety": "safe",
+    "explanation": "Activates the virtual environment, making its Python and packages the default.",
+    "flags": null
+  },
+  {
+    "id": "dv-025",
+    "command": "pip freeze > requirements.txt",
+    "description": "Export installed Python packages to requirements file",
+    "category": "Development",
+    "tags": [
+      "pip",
+      "freeze",
+      "export",
+      "requirements",
+      "snapshot"
+    ],
+    "example": "pip freeze > requirements.txt",
+    "safety": "safe",
+    "explanation": "Outputs all currently installed pip packages with exact versions to a requirements file.",
+    "flags": null
+  },
+  {
+    "id": "dv-026",
+    "command": "cargo new project_name",
+    "description": "Create a new Rust project",
+    "category": "Development",
+    "tags": [
+      "cargo",
+      "new",
+      "rust",
+      "project",
+      "scaffold"
+    ],
+    "example": "cargo new my_app",
+    "safety": "safe",
+    "explanation": "Creates a new Rust project with a standard directory structure and Cargo.toml.",
+    "flags": null
+  },
+  {
+    "id": "dv-027",
+    "command": "cargo build --release",
+    "description": "Build a Rust project in release mode",
+    "category": "Development",
+    "tags": [
+      "cargo",
+      "build",
+      "release",
+      "rust",
+      "optimize"
+    ],
+    "example": "cargo build --release",
+    "safety": "safe",
+    "explanation": "Compiles the Rust project with optimizations enabled for production.",
+    "flags": null
+  },
+  {
+    "id": "dv-028",
+    "command": "go mod init module_name",
+    "description": "Initialize a new Go module",
+    "category": "Development",
+    "tags": [
+      "go",
+      "mod",
+      "init",
+      "module",
+      "golang"
+    ],
+    "example": "go mod init github.com/user/project",
+    "safety": "safe",
+    "explanation": "Initializes a new go.mod file, creating a new Go module.",
+    "flags": null
+  },
+  {
+    "id": "dv-029",
+    "command": "go build -o binary_name",
+    "description": "Compile a Go program into a binary",
+    "category": "Development",
+    "tags": [
+      "go",
+      "build",
+      "compile",
+      "binary",
+      "golang"
+    ],
+    "example": "go build -o myapp",
+    "safety": "safe",
+    "explanation": "Compiles the Go source code into an executable binary.",
+    "flags": null
+  },
+  {
+    "id": "dv-030",
+    "command": "make target_name",
+    "description": "Run a Makefile target",
+    "category": "Development",
+    "tags": [
+      "make",
+      "makefile",
+      "build",
+      "target",
+      "task"
+    ],
+    "example": "make build",
+    "safety": "safe",
+    "explanation": "Executes the specified target defined in the Makefile.",
+    "flags": null
+  },
+  {
+    "id": "dv-031",
+    "command": "node script.js",
+    "description": "Run a Node.js script",
+    "category": "Development",
+    "tags": [
+      "node",
+      "run",
+      "script",
+      "javascript"
+    ],
+    "example": "node server.js",
+    "safety": "safe",
+    "explanation": "Executes the specified JavaScript file using the Node.js runtime.",
+    "flags": null
+  },
+  {
+    "id": "dv-032",
+    "command": "npx tsc --noEmit",
+    "description": "Type-check a TypeScript project without emitting files",
+    "category": "Development",
+    "tags": [
+      "tsc",
+      "typescript",
+      "typecheck",
+      "check",
+      "types"
+    ],
+    "example": "npx tsc --noEmit",
+    "safety": "safe",
+    "explanation": "Runs the TypeScript compiler in check-only mode to find type errors without producing output.",
+    "flags": null
+  },
+  {
+    "id": "dv-033",
+    "command": "eslint . --fix",
+    "description": "Run ESLint and auto-fix problems",
+    "category": "Development",
+    "tags": [
+      "eslint",
+      "lint",
+      "fix",
+      "format",
+      "code-quality"
+    ],
+    "example": "eslint src/ --fix",
+    "safety": "safe",
+    "explanation": "Lints the codebase and automatically fixes fixable linting errors.",
+    "flags": null
+  },
+  {
+    "id": "dv-034",
+    "command": "prettier --write .",
+    "description": "Format all files with Prettier",
+    "category": "Development",
+    "tags": [
+      "prettier",
+      "format",
+      "write",
+      "style",
+      "code"
+    ],
+    "example": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "safety": "safe",
+    "explanation": "Formats all supported files in place according to Prettier rules.",
+    "flags": null
+  },
+  {
+    "id": "dv-035",
+    "command": "git log --oneline -5",
+    "description": "Show the last 5 commits in one-line format",
+    "category": "Development",
+    "tags": [
+      "git",
+      "log",
+      "recent",
+      "commits",
+      "short"
+    ],
+    "example": "git log --oneline -5",
+    "safety": "safe",
+    "explanation": "Displays the 5 most recent commit messages, one per line.",
+    "flags": null
+  },
+  {
+    "id": "dv-036",
+    "command": "docker-compose logs -f",
+    "description": "Follow logs from all compose services",
+    "category": "Development",
+    "tags": [
+      "docker-compose",
+      "logs",
+      "follow",
+      "all",
+      "services"
+    ],
+    "example": "docker-compose logs -f",
+    "safety": "safe",
+    "explanation": "Streams log output from all services defined in the compose file in real-time.",
+    "flags": null
+  },
+  {
+    "id": "dv-037",
+    "command": "docker images",
+    "description": "List all local Docker images",
+    "category": "Development",
+    "tags": [
+      "docker",
+      "images",
+      "list",
+      "local",
+      "store"
+    ],
+    "example": "docker images --filter \"dangling=true\"",
+    "safety": "safe",
+    "explanation": "Lists all Docker images stored locally on the system.",
+    "flags": null
+  },
+  {
+    "id": "dv-038",
+    "command": "docker volume ls",
+    "description": "List all Docker volumes",
+    "category": "Development",
+    "tags": [
+      "docker",
+      "volume",
+      "list",
+      "storage",
+      "persist"
+    ],
+    "example": "docker volume ls",
+    "safety": "safe",
+    "explanation": "Lists all named Docker volumes on the system.",
+    "flags": null
+  },
+  {
+    "id": "dv-039",
+    "command": "docker network ls",
+    "description": "List all Docker networks",
+    "category": "Development",
+    "tags": [
+      "docker",
+      "network",
+      "list",
+      "show"
+    ],
+    "example": "docker network ls",
+    "safety": "safe",
+    "explanation": "Lists all Docker networks configured on the system.",
+    "flags": null
+  },
+  {
+    "id": "dv-040",
+    "command": "npx playwright test",
+    "description": "Run Playwright end-to-end tests",
+    "category": "Development",
+    "tags": [
+      "playwright",
+      "e2e",
+      "test",
+      "browser",
+      "automation"
+    ],
+    "example": "npx playwright test --headed",
+    "safety": "safe",
+    "explanation": "Runs Playwright browser-based end-to-end tests.",
+    "flags": null
+  },
+  {
+    "id": "fs-001",
+    "command": "find . -type d -empty -delete",
+    "description": "Find and delete all empty directories recursively",
+    "category": "File System",
+    "tags": [
+      "find",
+      "delete",
+      "empty",
+      "directory",
+      "cleanup"
+    ],
+    "example": "find . -type d -empty -delete",
+    "safety": "warning",
+    "explanation": "Recursively searches the current directory tree for empty directories and removes them. Useful for cleaning up project structures.",
+    "flags": null
+  },
+  {
+    "id": "fs-002",
+    "command": "find . -name \"*.log\" -mtime +30 -delete",
+    "description": "Delete log files older than 30 days",
+    "category": "File System",
+    "tags": [
+      "find",
+      "delete",
+      "log",
+      "old",
+      "cleanup"
+    ],
+    "example": "find /var/log -name \"*.log\" -mtime +30 -delete",
+    "safety": "warning",
+    "explanation": "Finds files matching the given pattern modified more than 30 days ago and deletes them.",
+    "flags": null
+  },
+  {
+    "id": "fs-003",
+    "command": "find . -type f -size +100M",
+    "description": "Find files larger than 100MB",
+    "category": "File System",
+    "tags": [
+      "find",
+      "large",
+      "files",
+      "size"
+    ],
+    "example": "find / -type f -size +100M 2>/dev/null",
+    "safety": "safe",
+    "explanation": "Searches for files exceeding the specified size. Helpful for tracking down disk space usage.",
+    "flags": null
+  },
+  {
+    "id": "fs-004",
+    "command": "find . -type f -name \"*.tmp\" -delete",
+    "description": "Delete all temporary files",
+    "category": "File System",
+    "tags": [
+      "find",
+      "delete",
+      "tmp",
+      "temp",
+      "cleanup"
+    ],
+    "example": "find . -type f -name \"*.tmp\" -delete",
+    "safety": "warning",
+    "explanation": "Recursively finds and removes all .tmp files in the current directory tree.",
+    "flags": null
+  },
+  {
+    "id": "fs-005",
+    "command": "find . -type f -perm 777",
+    "description": "Find files with 777 permissions",
+    "category": "File System",
+    "tags": [
+      "find",
+      "permissions",
+      "security",
+      "chmod"
+    ],
+    "example": "find /var/www -type f -perm 777",
+    "safety": "safe",
+    "explanation": "Locates files with world-writable permissions, which can be a security risk.",
+    "flags": null
+  },
+  {
+    "id": "fs-006",
+    "command": "find . -type d -name node_modules -prune",
+    "description": "Find node_modules directories without descending into them",
+    "category": "File System",
+    "tags": [
+      "find",
+      "node_modules",
+      "prune",
+      "skip"
+    ],
+    "example": "find . -type d -name node_modules -prune",
+    "safety": "safe",
+    "explanation": "Locates node_modules directories while preventing find from descending into them, saving time.",
+    "flags": null
+  },
+  {
+    "id": "fs-007",
+    "command": "find . -type f -exec chmod 644 {} +",
+    "description": "Set all files to 644 permissions",
+    "category": "File System",
+    "tags": [
+      "find",
+      "chmod",
+      "permissions",
+      "644"
+    ],
+    "example": "find . -type f -exec chmod 644 {} +",
+    "safety": "warning",
+    "explanation": "Recursively sets read/write for owner and read-only for group/others on all regular files.",
+    "flags": null
+  },
+  {
+    "id": "fs-008",
+    "command": "find . -type d -exec chmod 755 {} +",
+    "description": "Set all directories to 755 permissions",
+    "category": "File System",
+    "tags": [
+      "find",
+      "chmod",
+      "permissions",
+      "755"
+    ],
+    "example": "find . -type d -exec chmod 755 {} +",
+    "safety": "warning",
+    "explanation": "Recursively sets rwx for owner and rx for group/others on all directories.",
+    "flags": null
+  },
+  {
+    "id": "fs-009",
+    "command": "find . -xtype l",
+    "description": "Find broken symbolic links",
+    "category": "File System",
+    "tags": [
+      "find",
+      "symlink",
+      "broken",
+      "link"
+    ],
+    "example": "find . -xtype l",
+    "safety": "safe",
+    "explanation": "Locates symbolic links that point to non-existent targets.",
+    "flags": null
+  },
+  {
+    "id": "fs-010",
+    "command": "find . -type f -newer reference.txt",
+    "description": "Find files newer than a reference file",
+    "category": "File System",
+    "tags": [
+      "find",
+      "newer",
+      "reference",
+      "modified"
+    ],
+    "example": "find . -type f -newer reference.txt",
+    "safety": "safe",
+    "explanation": "Finds files modified more recently than the specified reference file.",
+    "flags": null
+  },
+  {
+    "id": "fs-011",
+    "command": "find . -maxdepth 1 -type f",
+    "description": "List files in current directory only (not recursive)",
+    "category": "File System",
+    "tags": [
+      "find",
+      "maxdepth",
+      "shallow",
+      "list"
+    ],
+    "example": "find . -maxdepth 1 -type f",
+    "safety": "safe",
+    "explanation": "Lists only regular files in the current directory without descending into subdirectories.",
+    "flags": null
+  },
+  {
+    "id": "fs-012",
+    "command": "find . -type f -empty",
+    "description": "Find all empty files",
+    "category": "File System",
+    "tags": [
+      "find",
+      "empty",
+      "files"
+    ],
+    "example": "find . -type f -empty",
+    "safety": "safe",
+    "explanation": "Locates all zero-byte files in the directory tree.",
+    "flags": null
+  },
+  {
+    "id": "fs-013",
+    "command": "find . -iname \"*.JPG\" -o -iname \"*.JPEG\"",
+    "description": "Find image files case-insensitively",
+    "category": "File System",
+    "tags": [
+      "find",
+      "image",
+      "jpg",
+      "case-insensitive"
+    ],
+    "example": "find . -iname \"*.jpg\" -o -iname \"*.jpeg\"",
+    "safety": "safe",
+    "explanation": "Searches for JPEG image files regardless of case (e.g., .jpg, .JPG, .jpeg).",
+    "flags": null
+  },
+  {
+    "id": "fs-014",
+    "command": "find . -type f -exec grep -l \"pattern\" {} +",
+    "description": "Find files containing a specific text pattern",
+    "category": "File System",
+    "tags": [
+      "find",
+      "grep",
+      "search",
+      "text",
+      "pattern"
+    ],
+    "example": "find . -type f -exec grep -l \"TODO\" {} +",
+    "safety": "safe",
+    "explanation": "Searches within files for a text pattern and lists the filenames that contain it.",
+    "flags": null
+  },
+  {
+    "id": "fs-015",
+    "command": "find . -type f -print0 | xargs -0 grep \"pattern\"",
+    "description": "Safely search file contents with special characters in names",
+    "category": "File System",
+    "tags": [
+      "find",
+      "xargs",
+      "grep",
+      "null",
+      "safe"
+    ],
+    "example": "find . -type f -print0 | xargs -0 grep \"TODO\"",
+    "safety": "safe",
+    "explanation": "Uses null-terminated output to safely handle filenames with spaces or special characters.",
+    "flags": null
+  },
+  {
+    "id": "fs-016",
+    "command": "find . -type f -name \"*.py\" -exec wc -l {} + | sort -n",
+    "description": "Count lines in all Python files sorted by size",
+    "category": "File System",
+    "tags": [
+      "find",
+      "wc",
+      "count",
+      "lines",
+      "python"
+    ],
+    "example": "find . -name \"*.py\" -exec wc -l {} + | sort -n",
+    "safety": "safe",
+    "explanation": "Counts lines in each Python file and sorts the results numerically.",
+    "flags": null
+  },
+  {
+    "id": "fs-017",
+    "command": "find . -type f -not -path \"*/.git/*\"",
+    "description": "Find files excluding .git directory",
+    "category": "File System",
+    "tags": [
+      "find",
+      "exclude",
+      "git",
+      "not"
+    ],
+    "example": "find . -type f -not -path \"*/.git/*\"",
+    "safety": "safe",
+    "explanation": "Searches for files while excluding anything inside .git directories.",
+    "flags": null
+  },
+  {
+    "id": "fs-018",
+    "command": "find . -type f -name \"*.bak\" -delete",
+    "description": "Delete all backup files",
+    "category": "File System",
+    "tags": [
+      "find",
+      "delete",
+      "backup",
+      "bak",
+      "cleanup"
+    ],
+    "example": "find . -name \"*.bak\" -delete",
+    "safety": "warning",
+    "explanation": "Removes all .bak backup files from the directory tree.",
+    "flags": null
+  },
+  {
+    "id": "fs-019",
+    "command": "find . -type f -user root",
+    "description": "Find files owned by root user",
+    "category": "File System",
+    "tags": [
+      "find",
+      "owner",
+      "root",
+      "user"
+    ],
+    "example": "find /etc -type f -user root",
+    "safety": "safe",
+    "explanation": "Locates files owned by the specified user.",
+    "flags": null
+  },
+  {
+    "id": "fs-020",
+    "command": "find . -type f -group staff",
+    "description": "Find files owned by a specific group",
+    "category": "File System",
+    "tags": [
+      "find",
+      "group",
+      "owner",
+      "staff"
+    ],
+    "example": "find . -type f -group staff",
+    "safety": "safe",
+    "explanation": "Locates files belonging to the specified group.",
+    "flags": null
+  },
+  {
+    "id": "fs-021",
+    "command": "mkdir -p path/to/nested/directory",
+    "description": "Create nested directories",
+    "category": "File System",
+    "tags": [
+      "mkdir",
+      "create",
+      "directory",
+      "nested",
+      "path"
+    ],
+    "example": "mkdir -p projects/2024/q1/reports",
+    "safety": "safe",
+    "explanation": "Creates a directory structure including all parent directories as needed.",
+    "flags": null
+  },
+  {
+    "id": "fs-022",
+    "command": "cp -r source/ destination/",
+    "description": "Copy directories recursively",
+    "category": "File System",
+    "tags": [
+      "cp",
+      "copy",
+      "directory",
+      "recursive"
+    ],
+    "example": "cp -r project/ backup/",
+    "safety": "safe",
+    "explanation": "Copies an entire directory tree from source to destination.",
+    "flags": null
+  },
+  {
+    "id": "fs-023",
+    "command": "mv old_name.txt new_name.txt",
+    "description": "Rename or move a file",
+    "category": "File System",
+    "tags": [
+      "mv",
+      "rename",
+      "move",
+      "file"
+    ],
+    "example": "mv document.txt archive/document.txt",
+    "safety": "safe",
+    "explanation": "Moves or renames a file from one path to another.",
+    "flags": null
+  },
+  {
+    "id": "fs-024",
+    "command": "rm -rf directory/",
+    "description": "Force remove a directory and all contents",
+    "category": "File System",
+    "tags": [
+      "rm",
+      "delete",
+      "force",
+      "recursive",
+      "dangerous"
+    ],
+    "example": "rm -rf old_project/",
+    "safety": "dangerous",
+    "explanation": "Recursively and forcefully deletes a directory and all its contents without prompting. Use with extreme caution.",
+    "flags": null
+  },
+  {
+    "id": "fs-025",
+    "command": "ln -s /path/to/target link_name",
+    "description": "Create a symbolic link",
+    "category": "File System",
+    "tags": [
+      "ln",
+      "symlink",
+      "link",
+      "shortcut"
+    ],
+    "example": "ln -s /opt/node/bin/node /usr/local/bin/node",
+    "safety": "safe",
+    "explanation": "Creates a symbolic link (shortcut) pointing to the target path.",
+    "flags": null
+  },
+  {
+    "id": "fs-026",
+    "command": "du -sh .",
+    "description": "Show total size of current directory",
+    "category": "File System",
+    "tags": [
+      "du",
+      "size",
+      "disk",
+      "usage",
+      "human"
+    ],
+    "example": "du -sh /var/log",
+    "safety": "safe",
+    "explanation": "Displays the total disk usage of the current directory in human-readable format.",
+    "flags": null
+  },
+  {
+    "id": "fs-027",
+    "command": "du -sh * | sort -rh",
+    "description": "List directory contents sorted by size",
+    "category": "File System",
+    "tags": [
+      "du",
+      "sort",
+      "size",
+      "disk",
+      "largest"
+    ],
+    "example": "du -sh * | sort -rh",
+    "safety": "safe",
+    "explanation": "Shows the size of each item in the current directory sorted from largest to smallest.",
+    "flags": null
+  },
+  {
+    "id": "fs-028",
+    "command": "df -h",
+    "description": "Show disk space usage for all filesystems",
+    "category": "File System",
+    "tags": [
+      "df",
+      "disk",
+      "space",
+      "filesystem",
+      "usage"
+    ],
+    "example": "df -h",
+    "safety": "safe",
+    "explanation": "Displays available and used disk space on all mounted filesystems in human-readable format.",
+    "flags": null
+  },
+  {
+    "id": "fs-029",
+    "command": "tree -L 2 -I node_modules",
+    "description": "Show directory tree excluding node_modules",
+    "category": "File System",
+    "tags": [
+      "tree",
+      "structure",
+      "directory",
+      "visual"
+    ],
+    "example": "tree -L 2 -I node_modules",
+    "safety": "safe",
+    "explanation": "Displays a visual tree of the directory structure up to 2 levels deep, excluding node_modules.",
+    "flags": null
+  },
+  {
+    "id": "fs-030",
+    "command": "stat filename.txt",
+    "description": "Show detailed file information",
+    "category": "File System",
+    "tags": [
+      "stat",
+      "file",
+      "info",
+      "metadata",
+      "permissions"
+    ],
+    "example": "stat document.pdf",
+    "safety": "safe",
+    "explanation": "Displays detailed metadata about a file including size, permissions, timestamps, and inode.",
+    "flags": null
+  },
+  {
+    "id": "fs-031",
+    "command": "touch filename.txt",
+    "description": "Create empty file or update timestamp",
+    "category": "File System",
+    "tags": [
+      "touch",
+      "create",
+      "file",
+      "timestamp"
+    ],
+    "example": "touch newfile.txt",
+    "safety": "safe",
+    "explanation": "Creates a new empty file or updates the access and modification times of an existing file.",
+    "flags": null
+  },
+  {
+    "id": "fs-032",
+    "command": "chmod +x script.sh",
+    "description": "Make a script executable",
+    "category": "File System",
+    "tags": [
+      "chmod",
+      "executable",
+      "permission",
+      "script"
+    ],
+    "example": "chmod +x deploy.sh",
+    "safety": "safe",
+    "explanation": "Adds execute permission to a file, allowing it to be run as a program.",
+    "flags": null
+  },
+  {
+    "id": "fs-033",
+    "command": "chown user:group filename",
+    "description": "Change file ownership",
+    "category": "File System",
+    "tags": [
+      "chown",
+      "owner",
+      "change",
+      "user",
+      "group"
+    ],
+    "example": "chown www-data:www-data index.html",
+    "safety": "warning",
+    "explanation": "Changes the owner and group of a file.",
+    "flags": null
+  },
+  {
+    "id": "fs-034",
+    "command": "tar -czf archive.tar.gz directory/",
+    "description": "Create a compressed tar archive",
+    "category": "File System",
+    "tags": [
+      "tar",
+      "archive",
+      "compress",
+      "gzip",
+      "backup"
+    ],
+    "example": "tar -czf backup.tar.gz project/",
+    "safety": "safe",
+    "explanation": "Creates a gzip-compressed tar archive of the specified directory.",
+    "flags": null
+  },
+  {
+    "id": "fs-035",
+    "command": "tar -xzf archive.tar.gz",
+    "description": "Extract a compressed tar archive",
+    "category": "File System",
+    "tags": [
+      "tar",
+      "extract",
+      "decompress",
+      "gzip",
+      "unpack"
+    ],
+    "example": "tar -xzf backup.tar.gz",
+    "safety": "safe",
+    "explanation": "Extracts the contents of a gzip-compressed tar archive into the current directory.",
+    "flags": null
+  },
+  {
+    "id": "fs-036",
+    "command": "zip -r archive.zip directory/",
+    "description": "Create a zip archive",
+    "category": "File System",
+    "tags": [
+      "zip",
+      "archive",
+      "compress",
+      "backup"
+    ],
+    "example": "zip -r release.zip dist/",
+    "safety": "safe",
+    "explanation": "Creates a zip archive of the specified directory recursively.",
+    "flags": null
+  },
+  {
+    "id": "fs-037",
+    "command": "unzip archive.zip -d destination/",
+    "description": "Extract a zip archive to a specific directory",
+    "category": "File System",
+    "tags": [
+      "unzip",
+      "extract",
+      "zip",
+      "decompress"
+    ],
+    "example": "unzip release.zip -d /opt/app",
+    "safety": "safe",
+    "explanation": "Extracts the contents of a zip archive into the specified destination directory.",
+    "flags": null
+  },
+  {
+    "id": "fs-038",
+    "command": "rsync -avz source/ destination/",
+    "description": "Synchronize directories with compression",
+    "category": "File System",
+    "tags": [
+      "rsync",
+      "sync",
+      "backup",
+      "copy",
+      "incremental"
+    ],
+    "example": "rsync -avz --delete project/ user@server:/path/",
+    "safety": "safe",
+    "explanation": "Efficiently synchronizes files between source and destination, transferring only differences.",
+    "flags": null
+  },
+  {
+    "id": "fs-039",
+    "command": "ln source.txt hardlink.txt",
+    "description": "Create a hard link",
+    "category": "File System",
+    "tags": [
+      "ln",
+      "hardlink",
+      "link",
+      "file"
+    ],
+    "example": "ln data.txt data_backup.txt",
+    "safety": "safe",
+    "explanation": "Creates a hard link that points to the same inode as the original file.",
+    "flags": null
+  },
+  {
+    "id": "fs-040",
+    "command": "find . -type f -atime +90 -delete",
+    "description": "Delete files not accessed in 90 days",
+    "category": "File System",
+    "tags": [
+      "find",
+      "delete",
+      "atime",
+      "old",
+      "stale"
+    ],
+    "example": "find /tmp -type f -atime +90 -delete",
+    "safety": "warning",
+    "explanation": "Removes files that have not been accessed in over 90 days.",
+    "flags": null
+  },
+  {
+    "id": "gt-001",
+    "command": "git init",
+    "description": "Initialize a new Git repository",
+    "category": "Git",
+    "tags": [
+      "git",
+      "init",
+      "create",
+      "repository",
+      "new"
+    ],
+    "example": "git init my-project",
+    "safety": "safe",
+    "explanation": "Creates a new empty Git repository in the current directory or reinitializes an existing one.",
+    "flags": null
+  },
+  {
+    "id": "gt-002",
+    "command": "git clone URL",
+    "description": "Clone a remote repository",
+    "category": "Git",
+    "tags": [
+      "git",
+      "clone",
+      "remote",
+      "download",
+      "copy"
+    ],
+    "example": "git clone https://github.com/user/repo.git",
+    "safety": "safe",
+    "explanation": "Downloads a copy of a remote repository to your local machine.",
+    "flags": null
+  },
+  {
+    "id": "gt-003",
+    "command": "git status",
+    "description": "Show working tree status",
+    "category": "Git",
+    "tags": [
+      "git",
+      "status",
+      "working",
+      "tree",
+      "changes"
+    ],
+    "example": "git status -s",
+    "safety": "safe",
+    "explanation": "Displays the current state of the working directory and staging area.",
+    "flags": null
+  },
+  {
+    "id": "gt-004",
+    "command": "git add .",
+    "description": "Stage all changes",
+    "category": "Git",
+    "tags": [
+      "git",
+      "add",
+      "stage",
+      "all",
+      "changes"
+    ],
+    "example": "git add .",
+    "safety": "safe",
+    "explanation": "Stages all modified, new, and deleted files for the next commit.",
+    "flags": null
+  },
+  {
+    "id": "gt-005",
+    "command": "git add -p",
+    "description": "Stage changes interactively by hunk",
+    "category": "Git",
+    "tags": [
+      "git",
+      "add",
+      "interactive",
+      "patch",
+      "hunk"
+    ],
+    "example": "git add -p",
+    "safety": "safe",
+    "explanation": "Allows you to interactively choose which hunks of changes to stage.",
+    "flags": null
+  },
+  {
+    "id": "gt-006",
+    "command": "git commit -m \"message\"",
+    "description": "Commit staged changes with a message",
+    "category": "Git",
+    "tags": [
+      "git",
+      "commit",
+      "message",
+      "save",
+      "snapshot"
+    ],
+    "example": "git commit -m \"Add user authentication\"",
+    "safety": "safe",
+    "explanation": "Records the staged changes to the repository with a descriptive message.",
+    "flags": null
+  },
+  {
+    "id": "gt-007",
+    "command": "git commit --amend --no-edit",
+    "description": "Add changes to the last commit without changing the message",
+    "category": "Git",
+    "tags": [
+      "git",
+      "commit",
+      "amend",
+      "modify",
+      "last"
+    ],
+    "example": "git commit --amend --no-edit",
+    "safety": "warning",
+    "explanation": "Adds currently staged changes to the most recent commit, keeping its original message.",
+    "flags": null
+  },
+  {
+    "id": "gt-008",
+    "command": "git push origin main",
+    "description": "Push commits to remote main branch",
+    "category": "Git",
+    "tags": [
+      "git",
+      "push",
+      "remote",
+      "origin",
+      "main"
+    ],
+    "example": "git push origin main",
+    "safety": "safe",
+    "explanation": "Uploads local commits to the remote repository on the specified branch.",
+    "flags": null
+  },
+  {
+    "id": "gt-009",
+    "command": "git push -u origin branch_name",
+    "description": "Push and set upstream for a new branch",
+    "category": "Git",
+    "tags": [
+      "git",
+      "push",
+      "upstream",
+      "track",
+      "branch"
+    ],
+    "example": "git push -u origin feature/login",
+    "safety": "safe",
+    "explanation": "Pushes a new branch to the remote and sets up tracking so future pushes only need \"git push\".",
+    "flags": null
+  },
+  {
+    "id": "gt-010",
+    "command": "git pull origin main",
+    "description": "Fetch and merge from remote main branch",
+    "category": "Git",
+    "tags": [
+      "git",
+      "pull",
+      "fetch",
+      "merge",
+      "remote"
+    ],
+    "example": "git pull origin main",
+    "safety": "safe",
+    "explanation": "Fetches changes from the remote and merges them into the current branch.",
+    "flags": null
+  },
+  {
+    "id": "gt-011",
+    "command": "git pull --rebase",
+    "description": "Pull and rebase local commits on top of remote",
+    "category": "Git",
+    "tags": [
+      "git",
+      "pull",
+      "rebase",
+      "replay",
+      "clean"
+    ],
+    "example": "git pull --rebase origin main",
+    "safety": "warning",
+    "explanation": "Fetches remote changes and replays your local commits on top, avoiding merge commits.",
+    "flags": null
+  },
+  {
+    "id": "gt-012",
+    "command": "git fetch --all",
+    "description": "Fetch all remotes without merging",
+    "category": "Git",
+    "tags": [
+      "git",
+      "fetch",
+      "all",
+      "remotes",
+      "download"
+    ],
+    "example": "git fetch --all --prune",
+    "safety": "safe",
+    "explanation": "Downloads objects and refs from all remotes without modifying your working directory.",
+    "flags": null
+  },
+  {
+    "id": "gt-013",
+    "command": "git branch",
+    "description": "List all local branches",
+    "category": "Git",
+    "tags": [
+      "git",
+      "branch",
+      "list",
+      "local"
+    ],
+    "example": "git branch -a",
+    "safety": "safe",
+    "explanation": "Lists all local branches. Use -a to also show remote branches.",
+    "flags": null
+  },
+  {
+    "id": "gt-014",
+    "command": "git branch branch_name",
+    "description": "Create a new branch",
+    "category": "Git",
+    "tags": [
+      "git",
+      "branch",
+      "create",
+      "new"
+    ],
+    "example": "git branch feature/api",
+    "safety": "safe",
+    "explanation": "Creates a new branch but does not switch to it.",
+    "flags": null
+  },
+  {
+    "id": "gt-015",
+    "command": "git checkout -b branch_name",
+    "description": "Create and switch to a new branch",
+    "category": "Git",
+    "tags": [
+      "git",
+      "checkout",
+      "create",
+      "switch",
+      "branch"
+    ],
+    "example": "git checkout -b feature/auth",
+    "safety": "safe",
+    "explanation": "Creates a new branch and immediately switches to it.",
+    "flags": null
+  },
+  {
+    "id": "gt-016",
+    "command": "git switch branch_name",
+    "description": "Switch to an existing branch",
+    "category": "Git",
+    "tags": [
+      "git",
+      "switch",
+      "checkout",
+      "branch",
+      "change"
+    ],
+    "example": "git switch main",
+    "safety": "safe",
+    "explanation": "Modern command to switch between branches. Replaces git checkout for branch switching.",
+    "flags": null
+  },
+  {
+    "id": "gt-017",
+    "command": "git merge branch_name",
+    "description": "Merge a branch into the current branch",
+    "category": "Git",
+    "tags": [
+      "git",
+      "merge",
+      "combine",
+      "branch",
+      "integrate"
+    ],
+    "example": "git merge feature/api",
+    "safety": "warning",
+    "explanation": "Integrates changes from the named branch into the current branch.",
+    "flags": null
+  },
+  {
+    "id": "gt-018",
+    "command": "git rebase main",
+    "description": "Rebase current branch onto main",
+    "category": "Git",
+    "tags": [
+      "git",
+      "rebase",
+      "replay",
+      "reorder",
+      "clean"
+    ],
+    "example": "git rebase main",
+    "safety": "warning",
+    "explanation": "Replays your current branch commits on top of the main branch, creating a linear history.",
+    "flags": null
+  },
+  {
+    "id": "gt-019",
+    "command": "git log --oneline --graph",
+    "description": "Show commit history as a compact graph",
+    "category": "Git",
+    "tags": [
+      "git",
+      "log",
+      "history",
+      "graph",
+      "visual"
+    ],
+    "example": "git log --oneline --graph --all",
+    "safety": "safe",
+    "explanation": "Displays a compact visual representation of the commit history.",
+    "flags": null
+  },
+  {
+    "id": "gt-020",
+    "command": "git log --author=\"name\"",
+    "description": "Show commits by a specific author",
+    "category": "Git",
+    "tags": [
+      "git",
+      "log",
+      "author",
+      "filter",
+      "commits"
+    ],
+    "example": "git log --author=\"John Doe\" --oneline",
+    "safety": "safe",
+    "explanation": "Filters the commit history to show only commits by the specified author.",
+    "flags": null
+  },
+  {
+    "id": "gt-021",
+    "command": "git diff",
+    "description": "Show unstaged changes",
+    "category": "Git",
+    "tags": [
+      "git",
+      "diff",
+      "changes",
+      "unstaged",
+      "compare"
+    ],
+    "example": "git diff",
+    "safety": "safe",
+    "explanation": "Shows the differences between your working directory and the staging area.",
+    "flags": null
+  },
+  {
+    "id": "gt-022",
+    "command": "git diff --staged",
+    "description": "Show staged changes",
+    "category": "Git",
+    "tags": [
+      "git",
+      "diff",
+      "staged",
+      "cached",
+      "compare"
+    ],
+    "example": "git diff --staged",
+    "safety": "safe",
+    "explanation": "Shows the differences between the staging area and the last commit.",
+    "flags": null
+  },
+  {
+    "id": "gt-023",
+    "command": "git reset --hard HEAD~1",
+    "description": "Discard the last commit and its changes",
+    "category": "Git",
+    "tags": [
+      "git",
+      "reset",
+      "hard",
+      "discard",
+      "undo"
+    ],
+    "example": "git reset --hard HEAD~1",
+    "safety": "dangerous",
+    "explanation": "Resets the current branch to one commit before HEAD, discarding all changes permanently.",
+    "flags": null
+  },
+  {
+    "id": "gt-024",
+    "command": "git reset --soft HEAD~1",
+    "description": "Undo the last commit but keep changes staged",
+    "category": "Git",
+    "tags": [
+      "git",
+      "reset",
+      "soft",
+      "undo",
+      "keep"
+    ],
+    "example": "git reset --soft HEAD~1",
+    "safety": "warning",
+    "explanation": "Moves HEAD back one commit but keeps all changes staged, ready to recommit.",
+    "flags": null
+  },
+  {
+    "id": "gt-025",
+    "command": "git revert HEAD",
+    "description": "Create a commit that undoes the last commit",
+    "category": "Git",
+    "tags": [
+      "git",
+      "revert",
+      "undo",
+      "safe",
+      "commit"
+    ],
+    "example": "git revert HEAD --no-edit",
+    "safety": "safe",
+    "explanation": "Creates a new commit that reverses the changes of the last commit, preserving history.",
+    "flags": null
+  },
+  {
+    "id": "gt-026",
+    "command": "git stash",
+    "description": "Temporarily save uncommitted changes",
+    "category": "Git",
+    "tags": [
+      "git",
+      "stash",
+      "save",
+      "temporary",
+      "shelve"
+    ],
+    "example": "git stash push -m \"work in progress\"",
+    "safety": "safe",
+    "explanation": "Saves your uncommitted changes and reverts the working directory to a clean state.",
+    "flags": null
+  },
+  {
+    "id": "gt-027",
+    "command": "git stash pop",
+    "description": "Restore the most recently stashed changes",
+    "category": "Git",
+    "tags": [
+      "git",
+      "stash",
+      "pop",
+      "restore",
+      "apply"
+    ],
+    "example": "git stash pop",
+    "safety": "safe",
+    "explanation": "Reapplies the most recently stashed changes and removes them from the stash list.",
+    "flags": null
+  },
+  {
+    "id": "gt-028",
+    "command": "git stash list",
+    "description": "List all stashed changes",
+    "category": "Git",
+    "tags": [
+      "git",
+      "stash",
+      "list",
+      "show",
+      "all"
+    ],
+    "example": "git stash list",
+    "safety": "safe",
+    "explanation": "Displays all saved stashes in the current repository.",
+    "flags": null
+  },
+  {
+    "id": "gt-029",
+    "command": "git cherry-pick commit_hash",
+    "description": "Apply a specific commit to the current branch",
+    "category": "Git",
+    "tags": [
+      "git",
+      "cherry-pick",
+      "apply",
+      "commit",
+      "specific"
+    ],
+    "example": "git cherry-pick abc1234",
+    "safety": "warning",
+    "explanation": "Applies the changes from an existing commit onto the current branch.",
+    "flags": null
+  },
+  {
+    "id": "gt-030",
+    "command": "git tag v1.0.0",
+    "description": "Create a lightweight tag",
+    "category": "Git",
+    "tags": [
+      "git",
+      "tag",
+      "version",
+      "release",
+      "mark"
+    ],
+    "example": "git tag -a v1.0.0 -m \"First release\"",
+    "safety": "safe",
+    "explanation": "Creates a tag pointing to the current commit, typically used for releases.",
+    "flags": null
+  },
+  {
+    "id": "gt-031",
+    "command": "git remote -v",
+    "description": "List all configured remotes",
+    "category": "Git",
+    "tags": [
+      "git",
+      "remote",
+      "list",
+      "url",
+      "show"
+    ],
+    "example": "git remote -v",
+    "safety": "safe",
+    "explanation": "Displays all remote repositories configured for the current project with their URLs.",
+    "flags": null
+  },
+  {
+    "id": "gt-032",
+    "command": "git remote add origin URL",
+    "description": "Add a new remote repository",
+    "category": "Git",
+    "tags": [
+      "git",
+      "remote",
+      "add",
+      "origin",
+      "url"
+    ],
+    "example": "git remote add origin https://github.com/user/repo.git",
+    "safety": "safe",
+    "explanation": "Adds a new remote repository reference to the current project.",
+    "flags": null
+  },
+  {
+    "id": "gt-033",
+    "command": "git reflog",
+    "description": "Show a log of all reference changes",
+    "category": "Git",
+    "tags": [
+      "git",
+      "reflog",
+      "history",
+      "reference",
+      "recover"
+    ],
+    "example": "git reflog --all",
+    "safety": "safe",
+    "explanation": "Shows a log of where HEAD has been, useful for recovering lost commits.",
+    "flags": null
+  },
+  {
+    "id": "gt-034",
+    "command": "git bisect start",
+    "description": "Begin binary search for a bug-introducing commit",
+    "category": "Git",
+    "tags": [
+      "git",
+      "bisect",
+      "binary",
+      "search",
+      "debug"
+    ],
+    "example": "git bisect start && git bisect bad HEAD && git bisect good v1.0.0",
+    "safety": "safe",
+    "explanation": "Begins a binary search through commit history to find which commit introduced a bug.",
+    "flags": null
+  },
+  {
+    "id": "gt-035",
+    "command": "git blame file.txt",
+    "description": "Show who last modified each line of a file",
+    "category": "Git",
+    "tags": [
+      "git",
+      "blame",
+      "author",
+      "lines",
+      "history"
+    ],
+    "example": "git blame -L 10,20 src/main.py",
+    "safety": "safe",
+    "explanation": "Displays the author and commit for each line of a file, useful for tracking down changes.",
+    "flags": null
+  },
+  {
+    "id": "gt-036",
+    "command": "git rm --cached file.txt",
+    "description": "Stop tracking a file without deleting it",
+    "category": "Git",
+    "tags": [
+      "git",
+      "rm",
+      "cached",
+      "untrack",
+      "remove"
+    ],
+    "example": "git rm --cached .env",
+    "safety": "safe",
+    "explanation": "Removes a file from Git tracking but keeps it on disk.",
+    "flags": null
+  },
+  {
+    "id": "gt-037",
+    "command": "git clean -fd",
+    "description": "Remove untracked files and directories",
+    "category": "Git",
+    "tags": [
+      "git",
+      "clean",
+      "untracked",
+      "remove",
+      "delete"
+    ],
+    "example": "git clean -fd",
+    "safety": "warning",
+    "explanation": "Removes all untracked files and directories from the working tree.",
+    "flags": null
+  },
+  {
+    "id": "gt-038",
+    "command": "git config --global user.name \"Name\"",
+    "description": "Set global Git username",
+    "category": "Git",
+    "tags": [
+      "git",
+      "config",
+      "global",
+      "user",
+      "name"
+    ],
+    "example": "git config --global user.name \"John Doe\"",
+    "safety": "safe",
+    "explanation": "Sets the default name that will be attached to all your commits across all repositories.",
+    "flags": null
+  },
+  {
+    "id": "gt-039",
+    "command": "git config --global user.email \"email\"",
+    "description": "Set global Git email address",
+    "category": "Git",
+    "tags": [
+      "git",
+      "config",
+      "global",
+      "user",
+      "email"
+    ],
+    "example": "git config --global user.email \"john@example.com\"",
+    "safety": "safe",
+    "explanation": "Sets the default email that will be attached to all your commits across all repositories.",
+    "flags": null
+  },
+  {
+    "id": "gt-040",
+    "command": "git log --since=\"2 weeks ago\"",
+    "description": "Show commits from the last 2 weeks",
+    "category": "Git",
+    "tags": [
+      "git",
+      "log",
+      "since",
+      "date",
+      "recent"
+    ],
+    "example": "git log --since=\"2 weeks ago\" --oneline",
+    "safety": "safe",
+    "explanation": "Filters the commit history to show only commits made after the specified date.",
+    "flags": null
+  },
+  {
+    "id": "ms-001",
+    "command": "echo \"text\"",
+    "description": "Print text to the terminal",
+    "category": "Basics",
+    "tags": [
+      "echo",
+      "print",
+      "output",
+      "text",
+      "display"
+    ],
+    "example": "echo \"Hello, World!\"",
+    "safety": "safe",
+    "explanation": "Outputs the given text to the standard output.",
+    "flags": null
+  },
+  {
+    "id": "ms-002",
+    "command": "cat file.txt",
+    "description": "Display the contents of a file",
+    "category": "Basics",
+    "tags": [
+      "cat",
+      "read",
+      "display",
+      "file",
+      "contents"
+    ],
+    "example": "cat README.md",
+    "safety": "safe",
+    "explanation": "Reads and displays the entire contents of the specified file.",
+    "flags": null
+  },
+  {
+    "id": "ms-003",
+    "command": "cat file1.txt file2.txt > combined.txt",
+    "description": "Concatenate multiple files into one",
+    "category": "Basics",
+    "tags": [
+      "cat",
+      "concatenate",
+      "merge",
+      "combine",
+      "redirect"
+    ],
+    "example": "cat header.txt body.txt > page.txt",
+    "safety": "safe",
+    "explanation": "Concatenates the contents of multiple files and writes the result to a new file.",
+    "flags": null
+  },
+  {
+    "id": "ms-004",
+    "command": "ls -la",
+    "description": "List all files including hidden ones in long format",
+    "category": "Basics",
+    "tags": [
+      "ls",
+      "list",
+      "all",
+      "hidden",
+      "long"
+    ],
+    "example": "ls -la /var/log",
+    "safety": "safe",
+    "explanation": "Lists all files including hidden ones with detailed information like permissions, size, and date.",
+    "flags": null
+  },
+  {
+    "id": "ms-005",
+    "command": "ls -lhS",
+    "description": "List files sorted by size",
+    "category": "Basics",
+    "tags": [
+      "ls",
+      "list",
+      "sort",
+      "size",
+      "human"
+    ],
+    "example": "ls -lhS",
+    "safety": "safe",
+    "explanation": "Lists files in human-readable format sorted from largest to smallest.",
+    "flags": null
+  },
+  {
+    "id": "ms-006",
+    "command": "ls -lt",
+    "description": "List files sorted by modification time",
+    "category": "Basics",
+    "tags": [
+      "ls",
+      "list",
+      "sort",
+      "time",
+      "recent"
+    ],
+    "example": "ls -lt",
+    "safety": "safe",
+    "explanation": "Lists files sorted by modification time, most recently modified first.",
+    "flags": null
+  },
+  {
+    "id": "ms-007",
+    "command": "cd /path/to/directory",
+    "description": "Change the current directory",
+    "category": "Basics",
+    "tags": [
+      "cd",
+      "change",
+      "directory",
+      "navigate",
+      "path"
+    ],
+    "example": "cd /var/www/html",
+    "safety": "safe",
+    "explanation": "Changes the current working directory to the specified path.",
+    "flags": null
+  },
+  {
+    "id": "ms-008",
+    "command": "cd -",
+    "description": "Go back to the previous directory",
+    "category": "Basics",
+    "tags": [
+      "cd",
+      "back",
+      "previous",
+      "directory",
+      "toggle"
+    ],
+    "example": "cd -",
+    "safety": "safe",
+    "explanation": "Switches back to the previous working directory.",
+    "flags": null
+  },
+  {
+    "id": "ms-009",
+    "command": "pwd",
+    "description": "Print the current working directory",
+    "category": "Basics",
+    "tags": [
+      "pwd",
+      "print",
+      "current",
+      "directory",
+      "path"
+    ],
+    "example": "pwd",
+    "safety": "safe",
+    "explanation": "Displays the absolute path of the current working directory.",
+    "flags": null
+  },
+  {
+    "id": "ms-010",
+    "command": "which command_name",
+    "description": "Find the path of an executable",
+    "category": "Basics",
+    "tags": [
+      "which",
+      "find",
+      "path",
+      "executable",
+      "binary"
+    ],
+    "example": "which python3",
+    "safety": "safe",
+    "explanation": "Locates the full path of the specified executable in the PATH.",
+    "flags": null
+  },
+  {
+    "id": "ms-011",
+    "command": "whereis command_name",
+    "description": "Find the binary, source, and manual for a command",
+    "category": "Basics",
+    "tags": [
+      "whereis",
+      "find",
+      "binary",
+      "source",
+      "manual"
+    ],
+    "example": "whereis nginx",
+    "safety": "safe",
+    "explanation": "Locates the binary, source, and manual page files for the specified command.",
+    "flags": null
+  },
+  {
+    "id": "ms-012",
+    "command": "man command_name",
+    "description": "Show the manual for a command",
+    "category": "Basics",
+    "tags": [
+      "man",
+      "manual",
+      "help",
+      "documentation",
+      "reference"
+    ],
+    "example": "man grep",
+    "safety": "safe",
+    "explanation": "Displays the manual page with detailed documentation for the specified command.",
+    "flags": null
+  },
+  {
+    "id": "ms-013",
+    "command": "command --help",
+    "description": "Show quick help for a command",
+    "category": "Basics",
+    "tags": [
+      "help",
+      "usage",
+      "flags",
+      "quick",
+      "reference"
+    ],
+    "example": "docker --help",
+    "safety": "safe",
+    "explanation": "Displays a brief help summary including available flags and options.",
+    "flags": null
+  },
+  {
+    "id": "ms-014",
+    "command": "history | tail -20",
+    "description": "Show the last 20 commands from history",
+    "category": "Basics",
+    "tags": [
+      "history",
+      "recent",
+      "commands",
+      "shell"
+    ],
+    "example": "history | tail -20",
+    "safety": "safe",
+    "explanation": "Displays the last 20 entries from your shell command history.",
+    "flags": null
+  },
+  {
+    "id": "ms-015",
+    "command": "alias name=\"command\"",
+    "description": "Create a shell alias",
+    "category": "Basics",
+    "tags": [
+      "alias",
+      "shortcut",
+      "name",
+      "create",
+      "shell"
+    ],
+    "example": "alias ll=\"ls -la\"",
+    "safety": "safe",
+    "explanation": "Creates a shortcut name for a longer command, valid for the current shell session.",
+    "flags": null
+  },
+  {
+    "id": "ms-016",
+    "command": "export VAR=\"value\"",
+    "description": "Set an environment variable",
+    "category": "Basics",
+    "tags": [
+      "export",
+      "environment",
+      "variable",
+      "set",
+      "env"
+    ],
+    "example": "export PATH=\"$PATH:/usr/local/bin\"",
+    "safety": "safe",
+    "explanation": "Sets an environment variable available to the current shell and child processes.",
+    "flags": null
+  },
+  {
+    "id": "ms-017",
+    "command": "env",
+    "description": "Show all environment variables",
+    "category": "Basics",
+    "tags": [
+      "env",
+      "environment",
+      "variables",
+      "show",
+      "list"
+    ],
+    "example": "env | grep PATH",
+    "safety": "safe",
+    "explanation": "Displays all currently set environment variables.",
+    "flags": null
+  },
+  {
+    "id": "ms-018",
+    "command": "date \"+%Y-%m-%d\"",
+    "description": "Show the current date in YYYY-MM-DD format",
+    "category": "Basics",
+    "tags": [
+      "date",
+      "format",
+      "current",
+      "time"
+    ],
+    "example": "date \"+%Y-%m-%d %H:%M:%S\"",
+    "safety": "safe",
+    "explanation": "Displays the current date and time in the specified format.",
+    "flags": null
+  },
+  {
+    "id": "ms-019",
+    "command": "cal",
+    "description": "Display a calendar",
+    "category": "Basics",
+    "tags": [
+      "cal",
+      "calendar",
+      "month",
+      "date"
+    ],
+    "example": "cal -3",
+    "safety": "safe",
+    "explanation": "Displays a formatted calendar for the current month.",
+    "flags": null
+  },
+  {
+    "id": "ms-020",
+    "command": "sleep 5",
+    "description": "Wait for 5 seconds",
+    "category": "Basics",
+    "tags": [
+      "sleep",
+      "wait",
+      "delay",
+      "pause",
+      "seconds"
+    ],
+    "example": "sleep 30 && echo \"Done waiting\"",
+    "safety": "safe",
+    "explanation": "Pauses execution for the specified number of seconds.",
+    "flags": null
+  },
+  {
+    "id": "ms-021",
+    "command": "time command",
+    "description": "Measure how long a command takes to run",
+    "category": "Basics",
+    "tags": [
+      "time",
+      "measure",
+      "duration",
+      "benchmark",
+      "performance"
+    ],
+    "example": "time npm run build",
+    "safety": "safe",
+    "explanation": "Executes the command and reports the elapsed wall-clock, user, and system time.",
+    "flags": null
+  },
+  {
+    "id": "ms-022",
+    "command": "watch -n 5 \"ls -l\"",
+    "description": "Run a command every 5 seconds",
+    "category": "Basics",
+    "tags": [
+      "watch",
+      "repeat",
+      "interval",
+      "monitor",
+      "refresh"
+    ],
+    "example": "watch -n 5 \"ls -l\"",
+    "safety": "safe",
+    "explanation": "Runs the specified command repeatedly at 5-second intervals, showing output full-screen.",
+    "flags": null
+  },
+  {
+    "id": "ms-023",
+    "command": "file filename",
+    "description": "Determine the file type",
+    "category": "Basics",
+    "tags": [
+      "file",
+      "type",
+      "detect",
+      "inspect",
+      "identify"
+    ],
+    "example": "file document.pdf",
+    "safety": "safe",
+    "explanation": "Examines the file and reports its type based on its content, not just the extension.",
+    "flags": null
+  },
+  {
+    "id": "ms-024",
+    "command": "basename /path/to/file.txt",
+    "description": "Extract the filename from a path",
+    "category": "Basics",
+    "tags": [
+      "basename",
+      "filename",
+      "extract",
+      "path",
+      "strip"
+    ],
+    "example": "basename /var/log/syslog .log",
+    "safety": "safe",
+    "explanation": "Strips directory and suffix from a path, returning just the filename.",
+    "flags": null
+  },
+  {
+    "id": "ms-025",
+    "command": "dirname /path/to/file.txt",
+    "description": "Extract the directory from a path",
+    "category": "Basics",
+    "tags": [
+      "dirname",
+      "directory",
+      "extract",
+      "path",
+      "strip"
+    ],
+    "example": "dirname /var/log/syslog",
+    "safety": "safe",
+    "explanation": "Strips the filename from a path, returning just the directory portion.",
+    "flags": null
+  },
+  {
+    "id": "ms-026",
+    "command": "readlink -f symlink",
+    "description": "Resolve a symbolic link to its absolute target",
+    "category": "Basics",
+    "tags": [
+      "readlink",
+      "resolve",
+      "symlink",
+      "target",
+      "absolute"
+    ],
+    "example": "readlink -f /usr/bin/python",
+    "safety": "safe",
+    "explanation": "Follows all symlinks and prints the absolute path of the final target.",
+    "flags": null
+  },
+  {
+    "id": "ms-027",
+    "command": "md5sum file.txt",
+    "description": "Calculate the MD5 hash of a file",
+    "category": "Basics",
+    "tags": [
+      "md5sum",
+      "hash",
+      "checksum",
+      "verify",
+      "integrity"
+    ],
+    "example": "md5sum ubuntu-20.04.iso",
+    "safety": "safe",
+    "explanation": "Computes and prints the MD5 checksum of the specified file for integrity verification.",
+    "flags": null
+  },
+  {
+    "id": "ms-028",
+    "command": "sha256sum file.txt",
+    "description": "Calculate the SHA-256 hash of a file",
+    "category": "Basics",
+    "tags": [
+      "sha256sum",
+      "hash",
+      "checksum",
+      "verify",
+      "security"
+    ],
+    "example": "sha256sum release.tar.gz",
+    "safety": "safe",
+    "explanation": "Computes and prints the SHA-256 checksum of the specified file.",
+    "flags": null
+  },
+  {
+    "id": "ms-029",
+    "command": "base64 file.txt",
+    "description": "Encode a file in Base64",
+    "category": "Basics",
+    "tags": [
+      "base64",
+      "encode",
+      "convert",
+      "binary",
+      "text"
+    ],
+    "example": "echo \"Hello\" | base64",
+    "safety": "safe",
+    "explanation": "Encodes the input file or data into Base64 format.",
+    "flags": null
+  },
+  {
+    "id": "ms-030",
+    "command": "base64 -d encoded.txt",
+    "description": "Decode a Base64-encoded file",
+    "category": "Basics",
+    "tags": [
+      "base64",
+      "decode",
+      "convert",
+      "binary",
+      "text"
+    ],
+    "example": "echo \"SGVsbG8=\" | base64 -d",
+    "safety": "safe",
+    "explanation": "Decodes Base64-encoded data back to its original binary form.",
+    "flags": null
+  },
+  {
+    "id": "ms-031",
+    "command": "xxd file.bin",
+    "description": "Display a hex dump of a file",
+    "category": "Basics",
+    "tags": [
+      "xxd",
+      "hex",
+      "dump",
+      "binary",
+      "inspect"
+    ],
+    "example": "xxd file.bin | head",
+    "safety": "safe",
+    "explanation": "Displays a hexadecimal dump of the file contents alongside the ASCII representation.",
+    "flags": null
+  },
+  {
+    "id": "ms-032",
+    "command": "command1 | command2",
+    "description": "Pipe output of one command as input to another",
+    "category": "Basics",
+    "tags": [
+      "pipe",
+      "redirect",
+      "chaining",
+      "output",
+      "input"
+    ],
+    "example": "cat file.txt | grep \"error\"",
+    "safety": "safe",
+    "explanation": "Sends the standard output of the first command as input to the second command.",
+    "flags": null
+  },
+  {
+    "id": "ms-033",
+    "command": "command > file.txt",
+    "description": "Redirect output to a file (overwrite)",
+    "category": "Basics",
+    "tags": [
+      "redirect",
+      "output",
+      "file",
+      "overwrite",
+      "write"
+    ],
+    "example": "ls -la > listing.txt",
+    "safety": "safe",
+    "explanation": "Writes the command output to a file, overwriting any existing content.",
+    "flags": null
+  },
+  {
+    "id": "ms-034",
+    "command": "command >> file.txt",
+    "description": "Append output to a file",
+    "category": "Basics",
+    "tags": [
+      "redirect",
+      "append",
+      "output",
+      "file",
+      "add"
+    ],
+    "example": "echo \"New entry\" >> log.txt",
+    "safety": "safe",
+    "explanation": "Appends the command output to the end of the specified file without overwriting.",
+    "flags": null
+  },
+  {
+    "id": "ms-035",
+    "command": "command 2>&1",
+    "description": "Redirect stderr to stdout",
+    "category": "Basics",
+    "tags": [
+      "redirect",
+      "stderr",
+      "stdout",
+      "error",
+      "combine"
+    ],
+    "example": "npm install 2>&1 | tee install.log",
+    "safety": "safe",
+    "explanation": "Merges standard error into standard output so both can be piped or redirected together.",
+    "flags": null
+  },
+  {
+    "id": "ms-036",
+    "command": "command < input.txt",
+    "description": "Read input from a file",
+    "category": "Basics",
+    "tags": [
+      "redirect",
+      "input",
+      "file",
+      "stdin",
+      "read"
+    ],
+    "example": "sort < unsorted.txt",
+    "safety": "safe",
+    "explanation": "Redirects the contents of the file as standard input to the command.",
+    "flags": null
+  },
+  {
+    "id": "ms-037",
+    "command": "chmod 600 file.txt",
+    "description": "Set file permissions to owner read/write only",
+    "category": "Basics",
+    "tags": [
+      "chmod",
+      "permission",
+      "private",
+      "600",
+      "secure"
+    ],
+    "example": "chmod 600 ~/.ssh/id_rsa",
+    "safety": "safe",
+    "explanation": "Sets the file to be readable and writable only by the owner, a common setting for private keys.",
+    "flags": null
+  },
+  {
+    "id": "ms-038",
+    "command": "chmod 755 script.sh",
+    "description": "Set permissions to owner rwx, others rx",
+    "category": "Basics",
+    "tags": [
+      "chmod",
+      "permission",
+      "755",
+      "executable",
+      "script"
+    ],
+    "example": "chmod 755 deploy.sh",
+    "safety": "safe",
+    "explanation": "Gives the owner full control while allowing others to read and execute but not write.",
+    "flags": null
+  },
+  {
+    "id": "ms-039",
+    "command": "umask 022",
+    "description": "Set default permission mask",
+    "category": "Basics",
+    "tags": [
+      "umask",
+      "default",
+      "permission",
+      "mask",
+      "create"
+    ],
+    "example": "umask 077",
+    "safety": "safe",
+    "explanation": "Sets the default permission mask that determines permissions for newly created files.",
+    "flags": null
+  },
+  {
+    "id": "ms-040",
+    "command": "sudo !!",
+    "description": "Re-run the last command with sudo",
+    "category": "Basics",
+    "tags": [
+      "sudo",
+      "repeat",
+      "last",
+      "command",
+      "root"
+    ],
+    "example": "sudo !!",
+    "safety": "warning",
+    "explanation": "Re-executes the previous command with elevated privileges. Useful when you forgot sudo.",
+    "flags": null
+  },
+  {
+    "id": "nw-001",
+    "command": "curl -s -o /dev/null -w \"%{http_code}\" URL",
+    "description": "Get only the HTTP status code from a URL",
+    "category": "Network",
+    "tags": [
+      "curl",
+      "http",
+      "status",
+      "code",
+      "check"
+    ],
+    "example": "curl -s -o /dev/null -w \"%{http_code}\" https://example.com",
+    "safety": "safe",
+    "explanation": "Fetches a URL and prints only the HTTP response status code.",
+    "flags": null
+  },
+  {
+    "id": "nw-002",
+    "command": "curl -X POST -d \"data\" URL",
+    "description": "Send a POST request with data",
+    "category": "Network",
+    "tags": [
+      "curl",
+      "post",
+      "request",
+      "http",
+      "send"
+    ],
+    "example": "curl -X POST -d \"name=John&age=30\" https://api.example.com/users",
+    "safety": "safe",
+    "explanation": "Sends an HTTP POST request with form-encoded data.",
+    "flags": null
+  },
+  {
+    "id": "nw-004",
+    "command": "curl -I URL",
+    "description": "Fetch only HTTP headers",
+    "category": "Network",
+    "tags": [
+      "curl",
+      "headers",
+      "head",
+      "http",
+      "inspect"
+    ],
+    "example": "curl -I https://example.com",
+    "safety": "safe",
+    "explanation": "Fetches only the HTTP response headers without the body.",
+    "flags": null
+  },
+  {
+    "id": "nw-005",
+    "command": "curl -L URL",
+    "description": "Follow redirects",
+    "category": "Network",
+    "tags": [
+      "curl",
+      "redirect",
+      "follow",
+      "http"
+    ],
+    "example": "curl -L https://short.url/abc",
+    "safety": "safe",
+    "explanation": "Follows HTTP redirects (3xx responses) to the final destination.",
+    "flags": null
+  },
+  {
+    "id": "nw-006",
+    "command": "curl -u user:pass URL",
+    "description": "Authenticate with basic auth",
+    "category": "Network",
+    "tags": [
+      "curl",
+      "auth",
+      "basic",
+      "credentials",
+      "http"
+    ],
+    "example": "curl -u admin:secret https://api.example.com/protected",
+    "safety": "warning",
+    "explanation": "Sends HTTP Basic Authentication credentials with the request.",
+    "flags": null
+  },
+  {
+    "id": "nw-007",
+    "command": "wget -q URL",
+    "description": "Download a file quietly",
+    "category": "Network",
+    "tags": [
+      "wget",
+      "download",
+      "quiet",
+      "file"
+    ],
+    "example": "wget -q https://example.com/file.zip",
+    "safety": "safe",
+    "explanation": "Downloads a file from a URL without displaying progress output.",
+    "flags": null
+  },
+  {
+    "id": "nw-008",
+    "command": "wget -c URL",
+    "description": "Continue a partial download",
+    "category": "Network",
+    "tags": [
+      "wget",
+      "download",
+      "continue",
+      "resume",
+      "partial"
+    ],
+    "example": "wget -c https://example.com/largefile.iso",
+    "safety": "safe",
+    "explanation": "Resumes a previously interrupted download from where it left off.",
+    "flags": null
+  },
+  {
+    "id": "nw-009",
+    "command": "ping -c 4 hostname",
+    "description": "Ping a host 4 times",
+    "category": "Network",
+    "tags": [
+      "ping",
+      "network",
+      "connectivity",
+      "icmp",
+      "test"
+    ],
+    "example": "ping -c 4 google.com",
+    "safety": "safe",
+    "explanation": "Sends 4 ICMP echo requests to test network connectivity to a host.",
+    "flags": null
+  },
+  {
+    "id": "nw-010",
+    "command": "netstat -tulpn",
+    "description": "Show listening ports and associated processes",
+    "category": "Network",
+    "tags": [
+      "netstat",
+      "ports",
+      "listening",
+      "process",
+      "services"
+    ],
+    "example": "netstat -tulpn",
+    "safety": "safe",
+    "explanation": "Lists all TCP and UDP listening ports along with the processes using them.",
+    "flags": null
+  },
+  {
+    "id": "nw-011",
+    "command": "ss -tulpn",
+    "description": "Show listening ports (modern replacement for netstat)",
+    "category": "Network",
+    "tags": [
+      "ss",
+      "sockets",
+      "ports",
+      "listening",
+      "modern"
+    ],
+    "example": "ss -tulpn",
+    "safety": "safe",
+    "explanation": "Modern tool to display socket statistics, showing listening TCP/UDP ports and processes.",
+    "flags": null
+  },
+  {
+    "id": "nw-012",
+    "command": "lsof -i :8080",
+    "description": "Find which process is using port 8080",
+    "category": "Network",
+    "tags": [
+      "lsof",
+      "port",
+      "process",
+      "find",
+      "open"
+    ],
+    "example": "lsof -i :3000",
+    "safety": "safe",
+    "explanation": "Lists processes that have the specified port open.",
+    "flags": null
+  },
+  {
+    "id": "nw-013",
+    "command": "nslookup domain.com",
+    "description": "Look up DNS records for a domain",
+    "category": "Network",
+    "tags": [
+      "nslookup",
+      "dns",
+      "lookup",
+      "domain",
+      "resolve"
+    ],
+    "example": "nslookup github.com",
+    "safety": "safe",
+    "explanation": "Queries DNS servers to find the IP address and other DNS records for a domain.",
+    "flags": null
+  },
+  {
+    "id": "nw-014",
+    "command": "dig domain.com",
+    "description": "Query DNS records for a domain",
+    "category": "Network",
+    "tags": [
+      "dig",
+      "dns",
+      "query",
+      "domain",
+      "records"
+    ],
+    "example": "dig +short github.com",
+    "safety": "safe",
+    "explanation": "Performs DNS lookups with detailed output including query timing and server info.",
+    "flags": null
+  },
+  {
+    "id": "nw-015",
+    "command": "dig +short domain.com",
+    "description": "Get just the IP address for a domain",
+    "category": "Network",
+    "tags": [
+      "dig",
+      "dns",
+      "short",
+      "ip",
+      "resolve"
+    ],
+    "example": "dig +short example.com",
+    "safety": "safe",
+    "explanation": "Returns only the resolved IP address without verbose DNS output.",
+    "flags": null
+  },
+  {
+    "id": "nw-016",
+    "command": "traceroute hostname",
+    "description": "Trace the network path to a host",
+    "category": "Network",
+    "tags": [
+      "traceroute",
+      "trace",
+      "route",
+      "path",
+      "network"
+    ],
+    "example": "traceroute google.com",
+    "safety": "safe",
+    "explanation": "Displays the route and transit delays of packets across a network to a destination.",
+    "flags": null
+  },
+  {
+    "id": "nw-017",
+    "command": "ssh user@hostname",
+    "description": "Connect to a remote server via SSH",
+    "category": "Network",
+    "tags": [
+      "ssh",
+      "remote",
+      "connect",
+      "login",
+      "secure"
+    ],
+    "example": "ssh root@192.168.1.100",
+    "safety": "safe",
+    "explanation": "Establishes a secure encrypted shell connection to a remote host.",
+    "flags": null
+  },
+  {
+    "id": "nw-018",
+    "command": "ssh -p 2222 user@hostname",
+    "description": "Connect to SSH on a custom port",
+    "category": "Network",
+    "tags": [
+      "ssh",
+      "port",
+      "custom",
+      "remote",
+      "connect"
+    ],
+    "example": "ssh -p 2222 admin@server.example.com",
+    "safety": "safe",
+    "explanation": "Connects to an SSH server listening on a non-default port.",
+    "flags": null
+  },
+  {
+    "id": "nw-019",
+    "command": "ssh -i ~/.ssh/id_rsa user@hostname",
+    "description": "Connect using a specific SSH key",
+    "category": "Network",
+    "tags": [
+      "ssh",
+      "key",
+      "identity",
+      "private",
+      "auth"
+    ],
+    "example": "ssh -i ~/.ssh/deploy_key deploy@server.com",
+    "safety": "safe",
+    "explanation": "Authenticates using a specific private key file instead of the default.",
+    "flags": null
+  },
+  {
+    "id": "nw-020",
+    "command": "scp file.txt user@host:/path/",
+    "description": "Copy a file to a remote server",
+    "category": "Network",
+    "tags": [
+      "scp",
+      "copy",
+      "remote",
+      "secure",
+      "transfer"
+    ],
+    "example": "scp backup.tar.gz root@server:/backups/",
+    "safety": "safe",
+    "explanation": "Securely copies a file from the local machine to a remote server over SSH.",
+    "flags": null
+  },
+  {
+    "id": "nw-021",
+    "command": "scp user@host:/path/file.txt .",
+    "description": "Copy a file from a remote server",
+    "category": "Network",
+    "tags": [
+      "scp",
+      "copy",
+      "remote",
+      "download",
+      "fetch"
+    ],
+    "example": "scp root@server:/var/log/syslog ./",
+    "safety": "safe",
+    "explanation": "Securely copies a file from a remote server to the local machine.",
+    "flags": null
+  },
+  {
+    "id": "nw-022",
+    "command": "scp -r directory/ user@host:/path/",
+    "description": "Copy a directory to a remote server",
+    "category": "Network",
+    "tags": [
+      "scp",
+      "copy",
+      "directory",
+      "recursive",
+      "remote"
+    ],
+    "example": "scp -r project/ deploy@server:/opt/",
+    "safety": "safe",
+    "explanation": "Securely copies an entire directory tree to a remote server.",
+    "flags": null
+  },
+  {
+    "id": "nw-023",
+    "command": "rsync -avz -e ssh source/ user@host:/dest/",
+    "description": "Sync a directory to a remote server over SSH",
+    "category": "Network",
+    "tags": [
+      "rsync",
+      "sync",
+      "remote",
+      "ssh",
+      "backup"
+    ],
+    "example": "rsync -avz -e ssh project/ deploy@server:/var/www/",
+    "safety": "safe",
+    "explanation": "Synchronizes a local directory to a remote server using SSH for transport.",
+    "flags": null
+  },
+  {
+    "id": "nw-024",
+    "command": "ifconfig",
+    "description": "Show network interface configuration",
+    "category": "Network",
+    "tags": [
+      "ifconfig",
+      "interface",
+      "network",
+      "config",
+      "ip"
+    ],
+    "example": "ifconfig eth0",
+    "safety": "safe",
+    "explanation": "Displays or configures network interface parameters and addresses.",
+    "flags": null
+  },
+  {
+    "id": "nw-025",
+    "command": "ip addr show",
+    "description": "Show IP addresses of all interfaces",
+    "category": "Network",
+    "tags": [
+      "ip",
+      "address",
+      "interface",
+      "network",
+      "modern"
+    ],
+    "example": "ip addr show eth0",
+    "safety": "safe",
+    "explanation": "Modern replacement for ifconfig, showing IP addresses and interface details.",
+    "flags": null
+  },
+  {
+    "id": "nw-026",
+    "command": "ip route show",
+    "description": "Show the routing table",
+    "category": "Network",
+    "tags": [
+      "ip",
+      "route",
+      "routing",
+      "table",
+      "gateway"
+    ],
+    "example": "ip route show",
+    "safety": "safe",
+    "explanation": "Displays the kernel routing table showing how packets are routed.",
+    "flags": null
+  },
+  {
+    "id": "nw-027",
+    "command": "hostname -I",
+    "description": "Show all IP addresses of this machine",
+    "category": "Network",
+    "tags": [
+      "hostname",
+      "ip",
+      "address",
+      "local",
+      "machine"
+    ],
+    "example": "hostname -I",
+    "safety": "safe",
+    "explanation": "Displays all IP addresses associated with the host.",
+    "flags": null
+  },
+  {
+    "id": "nw-028",
+    "command": "curl -w \"@curl-format.txt\" -o /dev/null -s URL",
+    "description": "Measure HTTP request timing breakdown",
+    "category": "Network",
+    "tags": [
+      "curl",
+      "timing",
+      "performance",
+      "latency",
+      "measure"
+    ],
+    "example": "curl -w \"@curl-format.txt\" -o /dev/null -s https://api.example.com",
+    "safety": "safe",
+    "explanation": "Measures and displays detailed timing information for each phase of an HTTP request.",
+    "flags": null
+  },
+  {
+    "id": "nw-029",
+    "command": "nc -zv hostname 80",
+    "description": "Check if a port is open on a remote host",
+    "category": "Network",
+    "tags": [
+      "nc",
+      "netcat",
+      "port",
+      "scan",
+      "check"
+    ],
+    "example": "nc -zv google.com 443",
+    "safety": "safe",
+    "explanation": "Tests whether a TCP port is open on a remote host without sending data.",
+    "flags": null
+  },
+  {
+    "id": "nw-030",
+    "command": "curl --compressed URL",
+    "description": "Request a URL with automatic decompression",
+    "category": "Network",
+    "tags": [
+      "curl",
+      "compressed",
+      "gzip",
+      "decompress"
+    ],
+    "example": "curl --compressed https://api.example.com/data",
+    "safety": "safe",
+    "explanation": "Requests compressed responses and automatically decompresses them.",
+    "flags": null
+  },
+  {
+    "id": "nw-031",
+    "command": "ssh-keygen -t ed25519 -C \"email@example.com\"",
+    "description": "Generate a new ED25519 SSH key",
+    "category": "Network",
+    "tags": [
+      "ssh-keygen",
+      "key",
+      "ed25519",
+      "generate",
+      "auth"
+    ],
+    "example": "ssh-keygen -t ed25519 -C \"user@example.com\"",
+    "safety": "safe",
+    "explanation": "Generates a new ED25519 SSH key pair, recommended for modern security.",
+    "flags": null
+  },
+  {
+    "id": "nw-032",
+    "command": "ssh-copy-id user@hostname",
+    "description": "Copy SSH public key to a remote server",
+    "category": "Network",
+    "tags": [
+      "ssh",
+      "copy",
+      "key",
+      "public",
+      "authorize"
+    ],
+    "example": "ssh-copy-id deploy@server.example.com",
+    "safety": "safe",
+    "explanation": "Installs your public SSH key on a remote server for passwordless authentication.",
+    "flags": null
+  },
+  {
+    "id": "nw-033",
+    "command": "curl -F \"file=@localfile.txt\" URL",
+    "description": "Upload a file via multipart form POST",
+    "category": "Network",
+    "tags": [
+      "curl",
+      "upload",
+      "file",
+      "multipart",
+      "form"
+    ],
+    "example": "curl -F \"file=@photo.jpg\" https://upload.example.com",
+    "safety": "safe",
+    "explanation": "Uploads a file to a server using multipart form-data encoding.",
+    "flags": null
+  },
+  {
+    "id": "nw-034",
+    "command": "curl -x http://proxy:8080 URL",
+    "description": "Send request through a proxy",
+    "category": "Network",
+    "tags": [
+      "curl",
+      "proxy",
+      "http",
+      "forward"
+    ],
+    "example": "curl -x http://proxy.local:3128 https://example.com",
+    "safety": "safe",
+    "explanation": "Routes the HTTP request through the specified proxy server.",
+    "flags": null
+  },
+  {
+    "id": "nw-035",
+    "command": "tcpdump -i eth0 port 80",
+    "description": "Capture HTTP traffic on a network interface",
+    "category": "Network",
+    "tags": [
+      "tcpdump",
+      "capture",
+      "sniff",
+      "traffic",
+      "packet"
+    ],
+    "example": "tcpdump -i eth0 port 443",
+    "safety": "warning",
+    "explanation": "Captures and displays network packets on the specified interface and port.",
+    "flags": null
+  },
+  {
+    "id": "nw-036",
+    "command": "whois domain.com",
+    "description": "Look up domain registration information",
+    "category": "Network",
+    "tags": [
+      "whois",
+      "domain",
+      "registration",
+      "lookup",
+      "dns"
+    ],
+    "example": "whois google.com",
+    "safety": "safe",
+    "explanation": "Retrieves registration details for a domain name from WHOIS databases.",
+    "flags": null
+  },
+  {
+    "id": "nw-037",
+    "command": "curl -sS URL 2>&1",
+    "description": "Fetch URL silently but show errors",
+    "category": "Network",
+    "tags": [
+      "curl",
+      "silent",
+      "errors",
+      "http"
+    ],
+    "example": "curl -sS https://api.example.com/health",
+    "safety": "safe",
+    "explanation": "Suppresses progress output but still displays error messages.",
+    "flags": null
+  },
+  {
+    "id": "nw-038",
+    "command": "ip link set eth0 up",
+    "description": "Bring a network interface up",
+    "category": "Network",
+    "tags": [
+      "ip",
+      "link",
+      "interface",
+      "up",
+      "enable"
+    ],
+    "example": "ip link set eth0 up",
+    "safety": "warning",
+    "explanation": "Enables the specified network interface.",
+    "flags": null
+  },
+  {
+    "id": "nw-039",
+    "command": "curl --retry 3 URL",
+    "description": "Retry a failed request up to 3 times",
+    "category": "Network",
+    "tags": [
+      "curl",
+      "retry",
+      "retry",
+      "resilient",
+      "http"
+    ],
+    "example": "curl --retry 3 https://flaky-api.example.com",
+    "safety": "safe",
+    "explanation": "Retries the request up to the specified number of times on transient errors.",
+    "flags": null
+  },
+  {
+    "id": "nw-040",
+    "command": "ssh -L 8080:localhost:80 user@remote",
+    "description": "Forward local port 8080 to remote port 80 via SSH tunnel",
+    "category": "Network",
+    "tags": [
+      "ssh",
+      "tunnel",
+      "port-forward",
+      "local",
+      "forward"
+    ],
+    "example": "ssh -L 5432:localhost:5432 user@db-server",
+    "safety": "safe",
+    "explanation": "Creates an SSH tunnel forwarding a local port to a remote service.",
+    "flags": null
+  },
+  {
+    "id": "pr-001",
+    "command": "ps aux",
+    "description": "List all running processes",
+    "category": "Process Management",
+    "tags": [
+      "ps",
+      "process",
+      "list",
+      "running",
+      "all"
+    ],
+    "example": "ps aux | grep nginx",
+    "safety": "safe",
+    "explanation": "Displays a snapshot of all running processes with detailed information including CPU and memory usage.",
+    "flags": null
+  },
+  {
+    "id": "pr-002",
+    "command": "ps aux | grep \"process_name\"",
+    "description": "Find a specific running process",
+    "category": "Process Management",
+    "tags": [
+      "ps",
+      "grep",
+      "find",
+      "process",
+      "search"
+    ],
+    "example": "ps aux | grep \"node\"",
+    "safety": "safe",
+    "explanation": "Filters the process list to show only processes matching the given name.",
+    "flags": null
+  },
+  {
+    "id": "pr-003",
+    "command": "top",
+    "description": "Show real-time system processes",
+    "category": "Process Management",
+    "tags": [
+      "top",
+      "realtime",
+      "monitor",
+      "cpu",
+      "memory"
+    ],
+    "example": "top",
+    "safety": "safe",
+    "explanation": "Displays a dynamic, real-time view of running system processes and resource usage.",
+    "flags": null
+  },
+  {
+    "id": "pr-004",
+    "command": "htop",
+    "description": "Interactive process viewer",
+    "category": "Process Management",
+    "tags": [
+      "htop",
+      "interactive",
+      "monitor",
+      "process",
+      "color"
+    ],
+    "example": "htop",
+    "safety": "safe",
+    "explanation": "An enhanced interactive process viewer with color output and easier navigation.",
+    "flags": null
+  },
+  {
+    "id": "pr-005",
+    "command": "kill -9 PID",
+    "description": "Force kill a process by PID",
+    "category": "Process Management",
+    "tags": [
+      "kill",
+      "force",
+      "signal",
+      "sigkill",
+      "terminate"
+    ],
+    "example": "kill -9 12345",
+    "safety": "dangerous",
+    "explanation": "Sends SIGKILL to immediately terminate a process. The process cannot catch or ignore this signal.",
+    "flags": null
+  },
+  {
+    "id": "pr-006",
+    "command": "kill -15 PID",
+    "description": "Gracefully terminate a process",
+    "category": "Process Management",
+    "tags": [
+      "kill",
+      "graceful",
+      "sigterm",
+      "terminate",
+      "signal"
+    ],
+    "example": "kill -15 12345",
+    "safety": "warning",
+    "explanation": "Sends SIGTERM to request a graceful shutdown, allowing the process to clean up.",
+    "flags": null
+  },
+  {
+    "id": "pr-007",
+    "command": "killall process_name",
+    "description": "Kill all processes by name",
+    "category": "Process Management",
+    "tags": [
+      "killall",
+      "kill",
+      "name",
+      "all",
+      "terminate"
+    ],
+    "example": "killall firefox",
+    "safety": "warning",
+    "explanation": "Sends a signal to all processes matching the given name.",
+    "flags": null
+  },
+  {
+    "id": "pr-008",
+    "command": "pkill -f \"pattern\"",
+    "description": "Kill processes matching a full command line pattern",
+    "category": "Process Management",
+    "tags": [
+      "pkill",
+      "kill",
+      "pattern",
+      "match",
+      "process"
+    ],
+    "example": "pkill -f \"python script.py\"",
+    "safety": "warning",
+    "explanation": "Kills processes whose full command line matches the given pattern.",
+    "flags": null
+  },
+  {
+    "id": "pr-009",
+    "command": "nohup command &",
+    "description": "Run a command immune to hangups in background",
+    "category": "Process Management",
+    "tags": [
+      "nohup",
+      "background",
+      "hangup",
+      "persistent",
+      "daemon"
+    ],
+    "example": "nohup python server.py &",
+    "safety": "safe",
+    "explanation": "Runs a command in the background that continues running after you log out.",
+    "flags": null
+  },
+  {
+    "id": "pr-010",
+    "command": "command &",
+    "description": "Run a command in the background",
+    "category": "Process Management",
+    "tags": [
+      "background",
+      "job",
+      "run",
+      "async"
+    ],
+    "example": "npm run build &",
+    "safety": "safe",
+    "explanation": "Runs the command in the background, returning the shell prompt immediately.",
+    "flags": null
+  },
+  {
+    "id": "pr-011",
+    "command": "jobs",
+    "description": "List background jobs",
+    "category": "Process Management",
+    "tags": [
+      "jobs",
+      "background",
+      "list",
+      "shell"
+    ],
+    "example": "jobs -l",
+    "safety": "safe",
+    "explanation": "Lists all currently active background jobs in the current shell session.",
+    "flags": null
+  },
+  {
+    "id": "pr-012",
+    "command": "fg %1",
+    "description": "Bring background job to foreground",
+    "category": "Process Management",
+    "tags": [
+      "fg",
+      "foreground",
+      "job",
+      "background",
+      "resume"
+    ],
+    "example": "fg %2",
+    "safety": "safe",
+    "explanation": "Brings the specified background job to the foreground.",
+    "flags": null
+  },
+  {
+    "id": "pr-013",
+    "command": "bg %1",
+    "description": "Resume a stopped job in the background",
+    "category": "Process Management",
+    "tags": [
+      "bg",
+      "background",
+      "resume",
+      "job",
+      "stopped"
+    ],
+    "example": "bg %1",
+    "safety": "safe",
+    "explanation": "Resumes a suspended job and continues it in the background.",
+    "flags": null
+  },
+  {
+    "id": "pr-014",
+    "command": "nice -n 10 command",
+    "description": "Run a command with lower priority",
+    "category": "Process Management",
+    "tags": [
+      "nice",
+      "priority",
+      "nice",
+      "low",
+      "cpu"
+    ],
+    "example": "nice -n 10 tar -czf backup.tar.gz large_dir/",
+    "safety": "safe",
+    "explanation": "Runs a command with reduced scheduling priority, making it more polite to other processes.",
+    "flags": null
+  },
+  {
+    "id": "pr-015",
+    "command": "renice -n 5 -p PID",
+    "description": "Change priority of a running process",
+    "category": "Process Management",
+    "tags": [
+      "renice",
+      "priority",
+      "change",
+      "running",
+      "process"
+    ],
+    "example": "renice -n 5 -p 12345",
+    "safety": "warning",
+    "explanation": "Adjusts the scheduling priority of an already running process.",
+    "flags": null
+  },
+  {
+    "id": "pr-016",
+    "command": "screen",
+    "description": "Start a terminal multiplexer session",
+    "category": "Process Management",
+    "tags": [
+      "screen",
+      "terminal",
+      "multiplexer",
+      "session",
+      "persistent"
+    ],
+    "example": "screen -S mysession",
+    "safety": "safe",
+    "explanation": "Starts a virtual terminal session that persists even after disconnecting.",
+    "flags": null
+  },
+  {
+    "id": "pr-017",
+    "command": "tmux new -s session_name",
+    "description": "Create a named tmux session",
+    "category": "Process Management",
+    "tags": [
+      "tmux",
+      "terminal",
+      "multiplexer",
+      "session",
+      "named"
+    ],
+    "example": "tmux new -s dev",
+    "safety": "safe",
+    "explanation": "Creates a new named tmux session for persistent terminal management.",
+    "flags": null
+  },
+  {
+    "id": "pr-018",
+    "command": "tmux attach -t session_name",
+    "description": "Attach to an existing tmux session",
+    "category": "Process Management",
+    "tags": [
+      "tmux",
+      "attach",
+      "session",
+      "resume",
+      "connect"
+    ],
+    "example": "tmux attach -t dev",
+    "safety": "safe",
+    "explanation": "Reconnects to an existing detached tmux session.",
+    "flags": null
+  },
+  {
+    "id": "pr-019",
+    "command": "pgrep -fl \"pattern\"",
+    "description": "Find processes by name with full command line",
+    "category": "Process Management",
+    "tags": [
+      "pgrep",
+      "find",
+      "process",
+      "name",
+      "list"
+    ],
+    "example": "pgrep -fl \"nginx\"",
+    "safety": "safe",
+    "explanation": "Lists PIDs and full command lines of processes matching the pattern.",
+    "flags": null
+  },
+  {
+    "id": "pr-020",
+    "command": "wait",
+    "description": "Wait for all background jobs to finish",
+    "category": "Process Management",
+    "tags": [
+      "wait",
+      "background",
+      "jobs",
+      "finish",
+      "block"
+    ],
+    "example": "wait",
+    "safety": "safe",
+    "explanation": "Blocks until all background jobs in the current shell have completed.",
+    "flags": null
+  },
+  {
+    "id": "pr-021",
+    "command": "uptime",
+    "description": "Show system uptime and load average",
+    "category": "Process Management",
+    "tags": [
+      "uptime",
+      "system",
+      "load",
+      "time",
+      "uptime"
+    ],
+    "example": "uptime",
+    "safety": "safe",
+    "explanation": "Displays how long the system has been running, number of users, and load averages.",
+    "flags": null
+  },
+  {
+    "id": "pr-022",
+    "command": "free -h",
+    "description": "Show memory usage in human-readable format",
+    "category": "Process Management",
+    "tags": [
+      "free",
+      "memory",
+      "ram",
+      "usage",
+      "human"
+    ],
+    "example": "free -h",
+    "safety": "safe",
+    "explanation": "Displays total, used, and free memory in human-readable units.",
+    "flags": null
+  },
+  {
+    "id": "pr-023",
+    "command": "kill -l",
+    "description": "List all available signals",
+    "category": "Process Management",
+    "tags": [
+      "kill",
+      "list",
+      "signals",
+      "list",
+      "reference"
+    ],
+    "example": "kill -l",
+    "safety": "safe",
+    "explanation": "Lists all signal names and numbers that can be sent to processes.",
+    "flags": null
+  },
+  {
+    "id": "pr-024",
+    "command": "kill -HUP PID",
+    "description": "Send a hangup signal to reload configuration",
+    "category": "Process Management",
+    "tags": [
+      "kill",
+      "hup",
+      "reload",
+      "config",
+      "signal"
+    ],
+    "example": "kill -HUP $(pgrep nginx)",
+    "safety": "warning",
+    "explanation": "Sends SIGHUP, commonly used to tell a process to reload its configuration.",
+    "flags": null
+  },
+  {
+    "id": "pr-025",
+    "command": "kill -STOP PID",
+    "description": "Pause a running process",
+    "category": "Process Management",
+    "tags": [
+      "kill",
+      "stop",
+      "pause",
+      "suspend",
+      "signal"
+    ],
+    "example": "kill -STOP 12345",
+    "safety": "warning",
+    "explanation": "Sends SIGSTOP to suspend a process. It can be resumed later with SIGCONT.",
+    "flags": null
+  },
+  {
+    "id": "pr-026",
+    "command": "kill -CONT PID",
+    "description": "Resume a paused process",
+    "category": "Process Management",
+    "tags": [
+      "kill",
+      "cont",
+      "resume",
+      "continue",
+      "signal"
+    ],
+    "example": "kill -CONT 12345",
+    "safety": "safe",
+    "explanation": "Sends SIGCONT to resume a previously stopped process.",
+    "flags": null
+  },
+  {
+    "id": "pr-027",
+    "command": "ulimit -n",
+    "description": "Show open file descriptor limit",
+    "category": "Process Management",
+    "tags": [
+      "ulimit",
+      "limit",
+      "files",
+      "descriptors",
+      "open"
+    ],
+    "example": "ulimit -n 65536",
+    "safety": "safe",
+    "explanation": "Displays or sets the maximum number of open file descriptors for the shell.",
+    "flags": null
+  },
+  {
+    "id": "pr-028",
+    "command": "pidof process_name",
+    "description": "Get the PID of a running process",
+    "category": "Process Management",
+    "tags": [
+      "pidof",
+      "pid",
+      "find",
+      "process",
+      "id"
+    ],
+    "example": "pidof nginx",
+    "safety": "safe",
+    "explanation": "Returns the process IDs of all running processes with the given name.",
+    "flags": null
+  },
+  {
+    "id": "pr-029",
+    "command": "watch -n 2 \"command\"",
+    "description": "Run a command every 2 seconds",
+    "category": "Process Management",
+    "tags": [
+      "watch",
+      "repeat",
+      "interval",
+      "monitor",
+      "refresh"
+    ],
+    "example": "watch -n 2 \"date\"",
+    "safety": "safe",
+    "explanation": "Repeatedly runs a command at the specified interval, showing the output full-screen.",
+    "flags": null
+  },
+  {
+    "id": "pr-030",
+    "command": "timeout 30 command",
+    "description": "Run a command with a time limit",
+    "category": "Process Management",
+    "tags": [
+      "timeout",
+      "limit",
+      "time",
+      "kill",
+      "duration"
+    ],
+    "example": "timeout 30 ping google.com",
+    "safety": "safe",
+    "explanation": "Runs a command and kills it if it runs longer than the specified duration.",
+    "flags": null
+  },
+  {
+    "id": "sy-001",
+    "command": "sudo apt update && sudo apt upgrade -y",
+    "description": "Update and upgrade all packages",
+    "category": "System",
+    "tags": [
+      "apt",
+      "update",
+      "upgrade",
+      "packages",
+      "debian"
+    ],
+    "example": "sudo apt update && sudo apt upgrade -y",
+    "safety": "warning",
+    "explanation": "Refreshes the package index and upgrades all installed packages to their latest versions.",
+    "flags": null
+  },
+  {
+    "id": "sy-002",
+    "command": "sudo apt install package_name",
+    "description": "Install a package on Debian/Ubuntu",
+    "category": "System",
+    "tags": [
+      "apt",
+      "install",
+      "package",
+      "debian",
+      "ubuntu"
+    ],
+    "example": "sudo apt install nginx",
+    "safety": "warning",
+    "explanation": "Installs the specified package and its dependencies from the configured repositories.",
+    "flags": null
+  },
+  {
+    "id": "sy-003",
+    "command": "sudo apt remove package_name",
+    "description": "Remove a package but keep config files",
+    "category": "System",
+    "tags": [
+      "apt",
+      "remove",
+      "package",
+      "uninstall"
+    ],
+    "example": "sudo apt remove nginx",
+    "safety": "warning",
+    "explanation": "Removes the specified package but leaves its configuration files in place.",
+    "flags": null
+  },
+  {
+    "id": "sy-004",
+    "command": "sudo apt purge package_name",
+    "description": "Remove a package and its config files",
+    "category": "System",
+    "tags": [
+      "apt",
+      "purge",
+      "remove",
+      "config",
+      "uninstall"
+    ],
+    "example": "sudo apt purge nginx",
+    "safety": "warning",
+    "explanation": "Removes the package along with all its configuration files.",
+    "flags": null
+  },
+  {
+    "id": "sy-005",
+    "command": "sudo apt autoremove",
+    "description": "Remove unused dependency packages",
+    "category": "System",
+    "tags": [
+      "apt",
+      "autoremove",
+      "cleanup",
+      "dependencies",
+      "unused"
+    ],
+    "example": "sudo apt autoremove -y",
+    "safety": "warning",
+    "explanation": "Removes packages that were automatically installed to satisfy dependencies and are no longer needed.",
+    "flags": null
+  },
+  {
+    "id": "sy-006",
+    "command": "sudo yum install package_name",
+    "description": "Install a package on RHEL/CentOS",
+    "category": "System",
+    "tags": [
+      "yum",
+      "install",
+      "package",
+      "rhel",
+      "centos"
+    ],
+    "example": "sudo yum install httpd",
+    "safety": "warning",
+    "explanation": "Installs the specified package on Red Hat-based distributions.",
+    "flags": null
+  },
+  {
+    "id": "sy-007",
+    "command": "sudo dnf install package_name",
+    "description": "Install a package on Fedora",
+    "category": "System",
+    "tags": [
+      "dnf",
+      "install",
+      "package",
+      "fedora",
+      "modern"
+    ],
+    "example": "sudo dnf install httpd",
+    "safety": "warning",
+    "explanation": "Installs the specified package using DNF, the modern Fedora package manager.",
+    "flags": null
+  },
+  {
+    "id": "sy-008",
+    "command": "sudo systemctl start service_name",
+    "description": "Start a system service",
+    "category": "System",
+    "tags": [
+      "systemctl",
+      "start",
+      "service",
+      "systemd"
+    ],
+    "example": "sudo systemctl start nginx",
+    "safety": "warning",
+    "explanation": "Starts the specified systemd service immediately.",
+    "flags": null
+  },
+  {
+    "id": "sy-009",
+    "command": "sudo systemctl stop service_name",
+    "description": "Stop a system service",
+    "category": "System",
+    "tags": [
+      "systemctl",
+      "stop",
+      "service",
+      "systemd"
+    ],
+    "example": "sudo systemctl stop nginx",
+    "safety": "warning",
+    "explanation": "Stops the specified systemd service immediately.",
+    "flags": null
+  },
+  {
+    "id": "sy-010",
+    "command": "sudo systemctl restart service_name",
+    "description": "Restart a system service",
+    "category": "System",
+    "tags": [
+      "systemctl",
+      "restart",
+      "service",
+      "systemd"
+    ],
+    "example": "sudo systemctl restart nginx",
+    "safety": "warning",
+    "explanation": "Stops and then starts the specified systemd service.",
+    "flags": null
+  },
+  {
+    "id": "sy-011",
+    "command": "sudo systemctl enable service_name",
+    "description": "Enable a service to start on boot",
+    "category": "System",
+    "tags": [
+      "systemctl",
+      "enable",
+      "boot",
+      "startup",
+      "systemd"
+    ],
+    "example": "sudo systemctl enable nginx",
+    "safety": "warning",
+    "explanation": "Configures the service to start automatically when the system boots.",
+    "flags": null
+  },
+  {
+    "id": "sy-012",
+    "command": "sudo systemctl disable service_name",
+    "description": "Disable a service from starting on boot",
+    "category": "System",
+    "tags": [
+      "systemctl",
+      "disable",
+      "boot",
+      "startup",
+      "systemd"
+    ],
+    "example": "sudo systemctl disable nginx",
+    "safety": "warning",
+    "explanation": "Prevents the service from starting automatically on boot.",
+    "flags": null
+  },
+  {
+    "id": "sy-013",
+    "command": "systemctl status service_name",
+    "description": "Check the status of a service",
+    "category": "System",
+    "tags": [
+      "systemctl",
+      "status",
+      "service",
+      "check",
+      "systemd"
+    ],
+    "example": "systemctl status nginx",
+    "safety": "safe",
+    "explanation": "Displays the current status, recent log entries, and running state of the service.",
+    "flags": null
+  },
+  {
+    "id": "sy-014",
+    "command": "sudo systemctl daemon-reload",
+    "description": "Reload systemd configuration files",
+    "category": "System",
+    "tags": [
+      "systemctl",
+      "daemon-reload",
+      "reload",
+      "config",
+      "systemd"
+    ],
+    "example": "sudo systemctl daemon-reload",
+    "safety": "warning",
+    "explanation": "Tells systemd to reload its configuration after service unit files have been modified.",
+    "flags": null
+  },
+  {
+    "id": "sy-015",
+    "command": "uname -a",
+    "description": "Show all system information",
+    "category": "System",
+    "tags": [
+      "uname",
+      "system",
+      "info",
+      "kernel",
+      "version"
+    ],
+    "example": "uname -a",
+    "safety": "safe",
+    "explanation": "Displays all available system information including kernel name, version, and architecture.",
+    "flags": null
+  },
+  {
+    "id": "sy-016",
+    "command": "lsb_release -a",
+    "description": "Show Linux distribution information",
+    "category": "System",
+    "tags": [
+      "lsb_release",
+      "distribution",
+      "version",
+      "distro"
+    ],
+    "example": "lsb_release -a",
+    "safety": "safe",
+    "explanation": "Displays distribution-specific information including the distributor, release, and codename.",
+    "flags": null
+  },
+  {
+    "id": "sy-017",
+    "command": "cat /etc/os-release",
+    "description": "Show operating system information",
+    "category": "System",
+    "tags": [
+      "os",
+      "release",
+      "info",
+      "distribution",
+      "version"
+    ],
+    "example": "cat /etc/os-release",
+    "safety": "safe",
+    "explanation": "Displays the operating system identification information as defined by the OS.",
+    "flags": null
+  },
+  {
+    "id": "sy-018",
+    "command": "lscpu",
+    "description": "Show CPU architecture information",
+    "category": "System",
+    "tags": [
+      "lscpu",
+      "cpu",
+      "processor",
+      "architecture",
+      "info"
+    ],
+    "example": "lscpu",
+    "safety": "safe",
+    "explanation": "Displays detailed CPU architecture information including cores, cache, and frequency.",
+    "flags": null
+  },
+  {
+    "id": "sy-019",
+    "command": "lsblk",
+    "description": "List block devices",
+    "category": "System",
+    "tags": [
+      "lsblk",
+      "block",
+      "device",
+      "disk",
+      "storage"
+    ],
+    "example": "lsblk -f",
+    "safety": "safe",
+    "explanation": "Lists information about all available block devices (disks, partitions) in a tree format.",
+    "flags": null
+  },
+  {
+    "id": "sy-020",
+    "command": "mount /dev/sdb1 /mnt/usb",
+    "description": "Mount a device to a directory",
+    "category": "System",
+    "tags": [
+      "mount",
+      "device",
+      "usb",
+      "disk",
+      "attach"
+    ],
+    "example": "mount /dev/sdb1 /mnt/usb",
+    "safety": "warning",
+    "explanation": "Attaches a filesystem on a block device to the specified mount point directory.",
+    "flags": null
+  },
+  {
+    "id": "sy-021",
+    "command": "umount /mnt/usb",
+    "description": "Unmount a filesystem",
+    "category": "System",
+    "tags": [
+      "umount",
+      "unmount",
+      "detach",
+      "usb",
+      "eject"
+    ],
+    "example": "umount /mnt/usb",
+    "safety": "warning",
+    "explanation": "Detaches a previously mounted filesystem from the directory tree.",
+    "flags": null
+  },
+  {
+    "id": "sy-022",
+    "command": "sudo fdisk -l",
+    "description": "List all disk partitions",
+    "category": "System",
+    "tags": [
+      "fdisk",
+      "disk",
+      "partition",
+      "list",
+      "table"
+    ],
+    "example": "sudo fdisk -l",
+    "safety": "safe",
+    "explanation": "Lists the partition tables for all detected disk devices.",
+    "flags": null
+  },
+  {
+    "id": "sy-023",
+    "command": "sudo shutdown -h now",
+    "description": "Shut down the system immediately",
+    "category": "System",
+    "tags": [
+      "shutdown",
+      "poweroff",
+      "halt",
+      "stop",
+      "system"
+    ],
+    "example": "sudo shutdown -h now",
+    "safety": "dangerous",
+    "explanation": "Immediately halts and powers off the system.",
+    "flags": null
+  },
+  {
+    "id": "sy-024",
+    "command": "sudo reboot",
+    "description": "Reboot the system",
+    "category": "System",
+    "tags": [
+      "reboot",
+      "restart",
+      "system",
+      "boot"
+    ],
+    "example": "sudo reboot",
+    "safety": "dangerous",
+    "explanation": "Immediately restarts the system.",
+    "flags": null
+  },
+  {
+    "id": "sy-025",
+    "command": "crontab -e",
+    "description": "Edit the current user crontab",
+    "category": "System",
+    "tags": [
+      "crontab",
+      "cron",
+      "schedule",
+      "edit",
+      "jobs"
+    ],
+    "example": "crontab -e",
+    "safety": "warning",
+    "explanation": "Opens the crontab file for editing, allowing you to schedule recurring tasks.",
+    "flags": null
+  },
+  {
+    "id": "sy-026",
+    "command": "crontab -l",
+    "description": "List current user cron jobs",
+    "category": "System",
+    "tags": [
+      "crontab",
+      "cron",
+      "list",
+      "jobs",
+      "schedule"
+    ],
+    "example": "crontab -l",
+    "safety": "safe",
+    "explanation": "Lists all scheduled cron jobs for the current user.",
+    "flags": null
+  },
+  {
+    "id": "sy-027",
+    "command": "hostnamectl set-hostname new_name",
+    "description": "Set the system hostname permanently",
+    "category": "System",
+    "tags": [
+      "hostname",
+      "set",
+      "name",
+      "change",
+      "system"
+    ],
+    "example": "sudo hostnamectl set-hostname webserver-01",
+    "safety": "warning",
+    "explanation": "Permanently changes the system hostname, persisting across reboots.",
+    "flags": null
+  },
+  {
+    "id": "sy-028",
+    "command": "timedatectl set-timezone Region/City",
+    "description": "Set the system timezone",
+    "category": "System",
+    "tags": [
+      "timezone",
+      "time",
+      "set",
+      "timedatectl",
+      "zone"
+    ],
+    "example": "sudo timedatectl set-timezone America/New_York",
+    "safety": "warning",
+    "explanation": "Sets the system timezone to the specified region and city.",
+    "flags": null
+  },
+  {
+    "id": "sy-029",
+    "command": "useradd -m -s /bin/bash username",
+    "description": "Create a new user with home directory",
+    "category": "System",
+    "tags": [
+      "useradd",
+      "user",
+      "create",
+      "account",
+      "add"
+    ],
+    "example": "sudo useradd -m -s /bin/bash jdoe",
+    "safety": "warning",
+    "explanation": "Creates a new user account with a home directory and bash as the default shell.",
+    "flags": null
+  },
+  {
+    "id": "sy-030",
+    "command": "userdel -r username",
+    "description": "Delete a user and their home directory",
+    "category": "System",
+    "tags": [
+      "userdel",
+      "delete",
+      "user",
+      "remove",
+      "account"
+    ],
+    "example": "sudo userdel -r jdoe",
+    "safety": "dangerous",
+    "explanation": "Deletes the specified user account and removes their home directory.",
+    "flags": null
+  },
+  {
+    "id": "sy-031",
+    "command": "passwd username",
+    "description": "Change a user password",
+    "category": "System",
+    "tags": [
+      "passwd",
+      "password",
+      "change",
+      "user",
+      "set"
+    ],
+    "example": "sudo passwd jdoe",
+    "safety": "warning",
+    "explanation": "Sets or changes the password for the specified user account.",
+    "flags": null
+  },
+  {
+    "id": "sy-032",
+    "command": "sudo usermod -aG groupname username",
+    "description": "Add a user to a group",
+    "category": "System",
+    "tags": [
+      "usermod",
+      "user",
+      "group",
+      "add",
+      "append"
+    ],
+    "example": "sudo usermod -aG docker jdoe",
+    "safety": "warning",
+    "explanation": "Appends the user to the specified group without removing them from other groups.",
+    "flags": null
+  },
+  {
+    "id": "sy-033",
+    "command": "groups username",
+    "description": "Show groups a user belongs to",
+    "category": "System",
+    "tags": [
+      "groups",
+      "user",
+      "membership",
+      "list",
+      "show"
+    ],
+    "example": "groups jdoe",
+    "safety": "safe",
+    "explanation": "Lists all groups that the specified user is a member of.",
+    "flags": null
+  },
+  {
+    "id": "sy-034",
+    "command": "id username",
+    "description": "Show user and group IDs",
+    "category": "System",
+    "tags": [
+      "id",
+      "user",
+      "group",
+      "uid",
+      "gid"
+    ],
+    "example": "id jdoe",
+    "safety": "safe",
+    "explanation": "Displays the user ID (UID) and group IDs (GID) for the specified user.",
+    "flags": null
+  },
+  {
+    "id": "sy-035",
+    "command": "who",
+    "description": "Show who is logged in",
+    "category": "System",
+    "tags": [
+      "who",
+      "logged",
+      "users",
+      "sessions",
+      "login"
+    ],
+    "example": "who",
+    "safety": "safe",
+    "explanation": "Displays all users currently logged into the system.",
+    "flags": null
+  },
+  {
+    "id": "sy-036",
+    "command": "last -10",
+    "description": "Show last 10 login sessions",
+    "category": "System",
+    "tags": [
+      "last",
+      "login",
+      "history",
+      "sessions",
+      "log"
+    ],
+    "example": "last -10",
+    "safety": "safe",
+    "explanation": "Displays the last 10 user login sessions recorded on the system.",
+    "flags": null
+  },
+  {
+    "id": "sy-037",
+    "command": "dmesg | tail -20",
+    "description": "Show last 20 kernel messages",
+    "category": "System",
+    "tags": [
+      "dmesg",
+      "kernel",
+      "messages",
+      "log",
+      "boot"
+    ],
+    "example": "dmesg | tail -20",
+    "safety": "safe",
+    "explanation": "Displays the last 20 kernel ring buffer messages, useful for hardware diagnostics.",
+    "flags": null
+  },
+  {
+    "id": "sy-038",
+    "command": "journalctl -u service_name -f",
+    "description": "Follow logs for a specific service",
+    "category": "System",
+    "tags": [
+      "journalctl",
+      "logs",
+      "service",
+      "follow",
+      "systemd"
+    ],
+    "example": "journalctl -u nginx -f",
+    "safety": "safe",
+    "explanation": "Streams the systemd journal logs for the specified service in real-time.",
+    "flags": null
+  },
+  {
+    "id": "sy-039",
+    "command": "journalctl --since \"1 hour ago\"",
+    "description": "Show system logs from the last hour",
+    "category": "System",
+    "tags": [
+      "journalctl",
+      "logs",
+      "recent",
+      "time",
+      "systemd"
+    ],
+    "example": "journalctl --since \"1 hour ago\" --priority err",
+    "safety": "safe",
+    "explanation": "Displays systemd journal entries from the specified time period.",
+    "flags": null
+  },
+  {
+    "id": "sy-040",
+    "command": "sudo visudo",
+    "description": "Safely edit the sudoers file",
+    "category": "System",
+    "tags": [
+      "visudo",
+      "sudo",
+      "sudoers",
+      "edit",
+      "safe"
+    ],
+    "example": "sudo visudo",
+    "safety": "warning",
+    "explanation": "Opens the sudoers configuration file for editing with syntax validation to prevent lockouts.",
+    "flags": null
+  },
+  {
+    "id": "tp-001",
+    "command": "grep -rn \"pattern\" .",
+    "description": "Search for a pattern recursively in all files",
+    "category": "Text Processing",
+    "tags": [
+      "grep",
+      "search",
+      "recursive",
+      "pattern",
+      "find"
+    ],
+    "example": "grep -rn \"TODO\" .",
+    "safety": "safe",
+    "explanation": "Recursively searches for a text pattern in all files, showing line numbers and filenames.",
+    "flags": null
+  },
+  {
+    "id": "tp-002",
+    "command": "grep -i \"pattern\" file.txt",
+    "description": "Search case-insensitively",
+    "category": "Text Processing",
+    "tags": [
+      "grep",
+      "case-insensitive",
+      "search",
+      "ignore"
+    ],
+    "example": "grep -i \"error\" log.txt",
+    "safety": "safe",
+    "explanation": "Searches for a pattern without regard to case.",
+    "flags": null
+  },
+  {
+    "id": "tp-003",
+    "command": "grep -v \"pattern\" file.txt",
+    "description": "Invert match: show lines NOT containing pattern",
+    "category": "Text Processing",
+    "tags": [
+      "grep",
+      "invert",
+      "exclude",
+      "not",
+      "negate"
+    ],
+    "example": "grep -v \"DEBUG\" log.txt",
+    "safety": "safe",
+    "explanation": "Displays all lines that do NOT match the given pattern.",
+    "flags": null
+  },
+  {
+    "id": "tp-004",
+    "command": "grep -c \"pattern\" file.txt",
+    "description": "Count matching lines",
+    "category": "Text Processing",
+    "tags": [
+      "grep",
+      "count",
+      "match",
+      "number"
+    ],
+    "example": "grep -c \"ERROR\" log.txt",
+    "safety": "safe",
+    "explanation": "Prints only the count of matching lines rather than the lines themselves.",
+    "flags": null
+  },
+  {
+    "id": "tp-005",
+    "command": "grep -E \"pattern1|pattern2\" file.txt",
+    "description": "Search for multiple patterns with extended regex",
+    "category": "Text Processing",
+    "tags": [
+      "grep",
+      "regex",
+      "extended",
+      "multiple",
+      "or"
+    ],
+    "example": "grep -E \"error|warning|critical\" log.txt",
+    "safety": "safe",
+    "explanation": "Uses extended regular expressions to match multiple alternative patterns.",
+    "flags": null
+  },
+  {
+    "id": "tp-006",
+    "command": "sed \"s/old/new/g\" file.txt",
+    "description": "Replace all occurrences of text in a file",
+    "category": "Text Processing",
+    "tags": [
+      "sed",
+      "replace",
+      "substitute",
+      "find-replace"
+    ],
+    "example": "sed \"s/foo/bar/g\" file.txt",
+    "safety": "safe",
+    "explanation": "Replaces every occurrence of \"old\" with \"new\" in the file content.",
+    "flags": null
+  },
+  {
+    "id": "tp-007",
+    "command": "sed -i \"s/old/new/g\" file.txt",
+    "description": "Replace text in-place in a file",
+    "category": "Text Processing",
+    "tags": [
+      "sed",
+      "replace",
+      "in-place",
+      "modify",
+      "edit"
+    ],
+    "example": "sed -i \"s/localhost/127.0.0.1/g\" config.txt",
+    "safety": "warning",
+    "explanation": "Modifies the file in-place, replacing all occurrences of the pattern.",
+    "flags": null
+  },
+  {
+    "id": "tp-008",
+    "command": "awk \"{print $1}\" file.txt",
+    "description": "Print the first column of each line",
+    "category": "Text Processing",
+    "tags": [
+      "awk",
+      "column",
+      "print",
+      "field",
+      "extract"
+    ],
+    "example": "awk \"{print $2}\" data.txt",
+    "safety": "safe",
+    "explanation": "Extracts and prints the first whitespace-delimited field from each line.",
+    "flags": null
+  },
+  {
+    "id": "tp-009",
+    "command": "awk -F, \"{print $1}\" file.csv",
+    "description": "Print first column of a CSV file",
+    "category": "Text Processing",
+    "tags": [
+      "awk",
+      "csv",
+      "column",
+      "comma",
+      "extract"
+    ],
+    "example": "awk -F, \"{print $1, $3}\" data.csv",
+    "safety": "safe",
+    "explanation": "Uses comma as the field separator and prints the first column from a CSV file.",
+    "flags": null
+  },
+  {
+    "id": "tp-010",
+    "command": "sort file.txt | uniq -c | sort -rn",
+    "description": "Count and sort unique lines by frequency",
+    "category": "Text Processing",
+    "tags": [
+      "sort",
+      "uniq",
+      "count",
+      "frequency",
+      "unique"
+    ],
+    "example": "sort access.log | uniq -c | sort -rn | head -10",
+    "safety": "safe",
+    "explanation": "Counts occurrences of each unique line and sorts by frequency, most common first.",
+    "flags": null
+  },
+  {
+    "id": "tp-011",
+    "command": "cut -d: -f1 /etc/passwd",
+    "description": "Extract first field delimited by colon",
+    "category": "Text Processing",
+    "tags": [
+      "cut",
+      "extract",
+      "field",
+      "delimiter",
+      "column"
+    ],
+    "example": "cut -d, -f1,3 data.csv",
+    "safety": "safe",
+    "explanation": "Splits each line by the delimiter and extracts the specified fields.",
+    "flags": null
+  },
+  {
+    "id": "tp-012",
+    "command": "tr \"[:lower:]\" \"[:upper:]\" < file.txt",
+    "description": "Convert text to uppercase",
+    "category": "Text Processing",
+    "tags": [
+      "tr",
+      "uppercase",
+      "convert",
+      "transform",
+      "case"
+    ],
+    "example": "echo \"hello\" | tr \"[:lower:]\" \"[:upper:]\"",
+    "safety": "safe",
+    "explanation": "Translates all lowercase characters to uppercase.",
+    "flags": null
+  },
+  {
+    "id": "tp-013",
+    "command": "tr -d \"\\\\n\" < file.txt",
+    "description": "Remove all newlines from file",
+    "category": "Text Processing",
+    "tags": [
+      "tr",
+      "delete",
+      "newline",
+      "remove",
+      "join"
+    ],
+    "example": "tr -d \"\\\\n\" < multiline.txt",
+    "safety": "safe",
+    "explanation": "Deletes all newline characters, joining all lines into one.",
+    "flags": null
+  },
+  {
+    "id": "tp-014",
+    "command": "wc -l file.txt",
+    "description": "Count lines in a file",
+    "category": "Text Processing",
+    "tags": [
+      "wc",
+      "count",
+      "lines",
+      "word-count"
+    ],
+    "example": "wc -l README.md",
+    "safety": "safe",
+    "explanation": "Counts the number of lines in the specified file.",
+    "flags": null
+  },
+  {
+    "id": "tp-015",
+    "command": "wc -w file.txt",
+    "description": "Count words in a file",
+    "category": "Text Processing",
+    "tags": [
+      "wc",
+      "count",
+      "words",
+      "word-count"
+    ],
+    "example": "wc -w essay.txt",
+    "safety": "safe",
+    "explanation": "Counts the number of words in the specified file.",
+    "flags": null
+  },
+  {
+    "id": "tp-016",
+    "command": "head -n 20 file.txt",
+    "description": "Show first 20 lines of a file",
+    "category": "Text Processing",
+    "tags": [
+      "head",
+      "first",
+      "lines",
+      "top",
+      "beginning"
+    ],
+    "example": "head -n 50 largefile.log",
+    "safety": "safe",
+    "explanation": "Displays the first N lines of a file.",
+    "flags": null
+  },
+  {
+    "id": "tp-017",
+    "command": "tail -n 20 file.txt",
+    "description": "Show last 20 lines of a file",
+    "category": "Text Processing",
+    "tags": [
+      "tail",
+      "last",
+      "lines",
+      "bottom",
+      "end"
+    ],
+    "example": "tail -n 100 /var/log/syslog",
+    "safety": "safe",
+    "explanation": "Displays the last N lines of a file.",
+    "flags": null
+  },
+  {
+    "id": "tp-018",
+    "command": "tail -f /var/log/syslog",
+    "description": "Follow a log file in real-time",
+    "category": "Text Processing",
+    "tags": [
+      "tail",
+      "follow",
+      "realtime",
+      "log",
+      "monitor"
+    ],
+    "example": "tail -f /var/log/nginx/access.log",
+    "safety": "safe",
+    "explanation": "Continuously displays new lines appended to a file in real-time.",
+    "flags": null
+  },
+  {
+    "id": "tp-019",
+    "command": "sort -u file.txt",
+    "description": "Sort and remove duplicate lines",
+    "category": "Text Processing",
+    "tags": [
+      "sort",
+      "unique",
+      "deduplicate",
+      "order"
+    ],
+    "example": "sort -u names.txt",
+    "safety": "safe",
+    "explanation": "Sorts the file and removes any duplicate lines.",
+    "flags": null
+  },
+  {
+    "id": "tp-020",
+    "command": "sort -t: -k3 -n /etc/passwd",
+    "description": "Sort by third numeric field",
+    "category": "Text Processing",
+    "tags": [
+      "sort",
+      "numeric",
+      "field",
+      "key",
+      "delimiter"
+    ],
+    "example": "sort -t, -k2 -n data.csv",
+    "safety": "safe",
+    "explanation": "Sorts lines numerically by the third colon-delimited field.",
+    "flags": null
+  },
+  {
+    "id": "tp-021",
+    "command": "uniq file.txt",
+    "description": "Remove adjacent duplicate lines",
+    "category": "Text Processing",
+    "tags": [
+      "uniq",
+      "deduplicate",
+      "adjacent",
+      "remove"
+    ],
+    "example": "sort file.txt | uniq",
+    "safety": "safe",
+    "explanation": "Removes consecutive duplicate lines. Use with sort to remove all duplicates.",
+    "flags": null
+  },
+  {
+    "id": "tp-022",
+    "command": "diff file1.txt file2.txt",
+    "description": "Compare two files line by line",
+    "category": "Text Processing",
+    "tags": [
+      "diff",
+      "compare",
+      "difference",
+      "files"
+    ],
+    "example": "diff original.txt modified.txt",
+    "safety": "safe",
+    "explanation": "Shows the differences between two files line by line.",
+    "flags": null
+  },
+  {
+    "id": "tp-023",
+    "command": "diff -r dir1/ dir2/",
+    "description": "Compare two directories recursively",
+    "category": "Text Processing",
+    "tags": [
+      "diff",
+      "compare",
+      "directory",
+      "recursive"
+    ],
+    "example": "diff -r project_v1/ project_v2/",
+    "safety": "safe",
+    "explanation": "Recursively compares all files in two directories.",
+    "flags": null
+  },
+  {
+    "id": "tp-024",
+    "command": "paste file1.txt file2.txt",
+    "description": "Merge files line by line",
+    "category": "Text Processing",
+    "tags": [
+      "paste",
+      "merge",
+      "join",
+      "combine",
+      "columns"
+    ],
+    "example": "paste names.txt ages.txt",
+    "safety": "safe",
+    "explanation": "Merges lines from multiple files into columns separated by tabs.",
+    "flags": null
+  },
+  {
+    "id": "tp-025",
+    "command": "join file1.txt file2.txt",
+    "description": "Join lines from two files on a common field",
+    "category": "Text Processing",
+    "tags": [
+      "join",
+      "merge",
+      "common",
+      "field",
+      "database"
+    ],
+    "example": "join users.txt orders.txt",
+    "safety": "safe",
+    "explanation": "Joins lines from two sorted files based on a common field.",
+    "flags": null
+  },
+  {
+    "id": "tp-026",
+    "command": "comm -12 file1.txt file2.txt",
+    "description": "Show lines common to two sorted files",
+    "category": "Text Processing",
+    "tags": [
+      "comm",
+      "common",
+      "intersection",
+      "compare"
+    ],
+    "example": "comm -12 sorted1.txt sorted2.txt",
+    "safety": "safe",
+    "explanation": "Displays lines common to both sorted files.",
+    "flags": null
+  },
+  {
+    "id": "tp-027",
+    "command": "rev file.txt",
+    "description": "Reverse each line of a file",
+    "category": "Text Processing",
+    "tags": [
+      "rev",
+      "reverse",
+      "flip",
+      "mirror"
+    ],
+    "example": "echo \"hello\" | rev",
+    "safety": "safe",
+    "explanation": "Reverses the character order of each line.",
+    "flags": null
+  },
+  {
+    "id": "tp-028",
+    "command": "fold -w 80 file.txt",
+    "description": "Wrap lines at 80 characters",
+    "category": "Text Processing",
+    "tags": [
+      "fold",
+      "wrap",
+      "width",
+      "format"
+    ],
+    "example": "fold -w 120 document.txt",
+    "safety": "safe",
+    "explanation": "Wraps each line to the specified width.",
+    "flags": null
+  },
+  {
+    "id": "tp-029",
+    "command": "fmt -w 80 file.txt",
+    "description": "Reformat paragraphs to 80 columns",
+    "category": "Text Processing",
+    "tags": [
+      "fmt",
+      "format",
+      "paragraph",
+      "wrap",
+      "width"
+    ],
+    "example": "fmt -w 72 README.txt",
+    "safety": "safe",
+    "explanation": "Reformats text paragraphs to fit within the specified width.",
+    "flags": null
+  },
+  {
+    "id": "tp-030",
+    "command": "nl file.txt",
+    "description": "Number all lines in a file",
+    "category": "Text Processing",
+    "tags": [
+      "nl",
+      "number",
+      "lines",
+      "enumerate"
+    ],
+    "example": "nl script.sh",
+    "safety": "safe",
+    "explanation": "Numbers all lines in the file, useful for referencing specific lines.",
+    "flags": null
+  },
+  {
+    "id": "tp-031",
+    "command": "column -t -s, file.csv",
+    "description": "Format CSV into aligned columns",
+    "category": "Text Processing",
+    "tags": [
+      "column",
+      "format",
+      "table",
+      "csv",
+      "align"
+    ],
+    "example": "column -t -s, data.csv",
+    "safety": "safe",
+    "explanation": "Formats comma-delimited data into a nicely aligned table.",
+    "flags": null
+  },
+  {
+    "id": "tp-032",
+    "command": "jq \".key\" file.json",
+    "description": "Extract a value from JSON",
+    "category": "Text Processing",
+    "tags": [
+      "jq",
+      "json",
+      "extract",
+      "parse",
+      "query"
+    ],
+    "example": "jq \".users[0].name\" data.json",
+    "safety": "safe",
+    "explanation": "Parses JSON and extracts the value at the specified key path.",
+    "flags": null
+  },
+  {
+    "id": "tp-033",
+    "command": "jq \".[] | .name\" file.json",
+    "description": "Extract a field from all array elements",
+    "category": "Text Processing",
+    "tags": [
+      "jq",
+      "json",
+      "array",
+      "extract",
+      "iterate"
+    ],
+    "example": "jq \".items[] | .title\" products.json",
+    "safety": "safe",
+    "explanation": "Iterates over a JSON array and extracts the specified field from each element.",
+    "flags": null
+  },
+  {
+    "id": "tp-034",
+    "command": "jq \"keys\" file.json",
+    "description": "List all keys in a JSON object",
+    "category": "Text Processing",
+    "tags": [
+      "jq",
+      "json",
+      "keys",
+      "inspect"
+    ],
+    "example": "jq \"keys\" config.json",
+    "safety": "safe",
+    "explanation": "Lists all top-level keys in a JSON object.",
+    "flags": null
+  },
+  {
+    "id": "tp-035",
+    "command": "xargs -I{} command {}",
+    "description": "Run a command for each line of input",
+    "category": "Text Processing",
+    "tags": [
+      "xargs",
+      "iterate",
+      "each",
+      "loop",
+      "command"
+    ],
+    "example": "cat urls.txt | xargs -I{} curl -s {}",
+    "safety": "safe",
+    "explanation": "Executes a command for each line of input, substituting the line in place of {}.",
+    "flags": null
+  },
+  {
+    "id": "tp-036",
+    "command": "tee output.txt",
+    "description": "Write to a file and stdout simultaneously",
+    "category": "Text Processing",
+    "tags": [
+      "tee",
+      "redirect",
+      "copy",
+      "split",
+      "log"
+    ],
+    "example": "echo \"log entry\" | tee -a logfile.txt",
+    "safety": "safe",
+    "explanation": "Reads from stdin and writes to both stdout and one or more files.",
+    "flags": null
+  },
+  {
+    "id": "tp-037",
+    "command": "strings binary_file",
+    "description": "Extract readable text from a binary file",
+    "category": "Text Processing",
+    "tags": [
+      "strings",
+      "binary",
+      "extract",
+      "text",
+      "readable"
+    ],
+    "example": "strings /usr/bin/ls | head",
+    "safety": "safe",
+    "explanation": "Extracts sequences of printable characters from a binary file.",
+    "flags": null
+  },
+  {
+    "id": "tp-038",
+    "command": "grep -P \"\\\\d{3}-\\\\d{4}\" file.txt",
+    "description": "Search using Perl-compatible regex",
+    "category": "Text Processing",
+    "tags": [
+      "grep",
+      "perl",
+      "regex",
+      "pcRE",
+      "pattern"
+    ],
+    "example": "grep -P \"\\\\d{3}-\\\\d{4}\" contacts.txt",
+    "safety": "safe",
+    "explanation": "Uses Perl-compatible regular expressions for more powerful pattern matching.",
+    "flags": null
+  },
+  {
+    "id": "tp-039",
+    "command": "awk \"NR%2==0\" file.txt",
+    "description": "Print every other line",
+    "category": "Text Processing",
+    "tags": [
+      "awk",
+      "even",
+      "odd",
+      "alternate",
+      "every"
+    ],
+    "example": "awk \"NR%2==0\" data.txt",
+    "safety": "safe",
+    "explanation": "Prints only even-numbered lines from the file.",
+    "flags": null
+  },
+  {
+    "id": "tp-040",
+    "command": "sed -n \"10,20p\" file.txt",
+    "description": "Print lines 10 through 20",
+    "category": "Text Processing",
+    "tags": [
+      "sed",
+      "range",
+      "lines",
+      "print",
+      "extract"
+    ],
+    "example": "sed -n \"5,15p\" config.txt",
+    "safety": "safe",
+    "explanation": "Prints only the specified range of lines from the file.",
+    "flags": null
+  }
+]
