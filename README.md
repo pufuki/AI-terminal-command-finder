@@ -6,15 +6,15 @@ Built with **semantic retrieval (RAG)** — not an LLM call per query. An LLM (O
 
 ## Features
 
-- **Semantic search** — TF-IDF retrieval on the frontend, FAISS + sentence-transformers on the backend
-- **309 indexed commands** across 8 categories (File System, Text Processing, Network, Process Management, Git, System, Development, Basics)
-- **AI fallback** — Ollama generates commands when retrieval confidence is low
-- **Safety badges** — Safe / Warning / Dangerous with warnings before destructive commands
-- **Keyboard navigation** — Arrow keys to navigate, Enter to copy
-- **Premium UI** — Raycast/Warp/Linear-inspired dark mode design
-- **Instant search** — 200ms debounce, sub-50ms retrieval
-- **Copy button** — One-click copy for every command
-- **Confidence scores** — Visual indicator of match quality
+- **Semantic search** - TF-IDF retrieval on the frontend, FAISS + sentence-transformers on the backend
+- **309 indexed commands** - across 8 categories (File System, Text Processing, Network, Process Management, Git, System, Development, Basics)
+- **AI fallback** - Ollama generates commands when retrieval confidence is low
+- **Safety badges** - Safe / Warning / Dangerous with warnings before destructive commands
+- **Keyboard navigation** - Arrow keys to navigate, Enter to copy
+- **Premium UI** - Raycast/Warp/Linear-inspired dark mode design
+- **Instant search** - 200ms debounce, sub-50ms retrieval
+- **Copy button** - One-click copy for every command
+- **Confidence scores** - Visual indicator of match quality
 
 ## Quick Start
 
@@ -25,7 +25,7 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:3000. The TF-IDF search works standalone — no Python or Ollama required.
+Open http://localhost:3000. The TF-IDF search works standalone - no Python or Ollama required.
 
 ### Option 2: Full Stack (FAISS + Ollama)
 
