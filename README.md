@@ -2,7 +2,7 @@
 
 Find the right terminal command in seconds. Describe what you want in plain English and get the exact command, explanation, flags, and safety info instantly.
 
-Built with **semantic retrieval (RAG)** — not an LLM call per query. An LLM (Ollama) is used only as a fallback when retrieval confidence is low.
+Built with **semantic retrieval (RAG)** - not an LLM call per query. An LLM (Ollama) is used only as a fallback when retrieval confidence is low.
 
 ## Features
 
