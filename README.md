@@ -71,7 +71,3 @@ To regenerate the backend dataset after modifying TypeScript files:
 ```bash
 cd backend && node generate_dataset.js
 ```
-
-## License
-
-MIT
